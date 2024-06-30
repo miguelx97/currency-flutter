@@ -13,6 +13,7 @@ class Calculator {
         if (formula.isEmpty || formula.last.type == ButtonCalcType.operator) {
           return;
         }
+        calculate();
         if (formula.last.type == ButtonCalcType.operator) {
           formula.removeLast();
         }
@@ -35,6 +36,10 @@ class Calculator {
         formula.add(btn);
         break;
     }
+  }
+
+  isThereOperator() {
+    return formula.any((element) => element.type == ButtonCalcType.operator);
   }
 
   replaceLastNumber(String value) {
@@ -77,65 +82,4 @@ class Calculator {
       }
     }).join();
   }
-}
-
-getButtons() {
-  return [
-    ButtonCalc(
-      value: 'C',
-      type: ButtonCalcType.function,
-      func: (Calculator calc) {
-        calc.formula.clear();
-      },
-    ),
-    ButtonCalc(
-      value: 'DEL',
-      type: ButtonCalcType.function,
-      func: (Calculator calc) {
-        calc.delete();
-      },
-    ),
-    ButtonCalc(
-      value: '%',
-      type: ButtonCalcType.function,
-      func: (calc) {
-        String lastValue = calc.formula.last.value;
-        lastValue = (double.parse(lastValue) / 100).toStringAsFixed(2);
-        calc.replaceLastNumber(lastValue);
-      },
-    ),
-    ButtonCalc(value: '/', type: ButtonCalcType.operator),
-    ButtonCalc(value: '7', type: ButtonCalcType.number),
-    ButtonCalc(value: '8', type: ButtonCalcType.number),
-    ButtonCalc(value: '9', type: ButtonCalcType.number),
-    ButtonCalc(value: 'x', type: ButtonCalcType.operator),
-    ButtonCalc(value: '4', type: ButtonCalcType.number),
-    ButtonCalc(value: '5', type: ButtonCalcType.number),
-    ButtonCalc(value: '6', type: ButtonCalcType.number),
-    ButtonCalc(value: '-', type: ButtonCalcType.operator),
-    ButtonCalc(value: '1', type: ButtonCalcType.number),
-    ButtonCalc(value: '2', type: ButtonCalcType.number),
-    ButtonCalc(value: '3', type: ButtonCalcType.number),
-    ButtonCalc(value: '+', type: ButtonCalcType.operator),
-    ButtonCalc(
-        value: '+/-',
-        type: ButtonCalcType.function,
-        func: (calc) {
-          String lastValue = calc.formula.last.value;
-          if (lastValue.startsWith('-')) {
-            calc.replaceLastNumber(lastValue.substring(1));
-          } else {
-            calc.replaceLastNumber('-$lastValue');
-          }
-        }),
-    ButtonCalc(value: '0', type: ButtonCalcType.number),
-    ButtonCalc(value: '.', type: ButtonCalcType.number),
-    ButtonCalc(
-      value: '=',
-      type: ButtonCalcType.function,
-      func: (calc) {
-        calc.calculate();
-      },
-    ),
-  ];
 }

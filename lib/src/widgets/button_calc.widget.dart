@@ -1,25 +1,26 @@
 import 'package:currency_converter/src/models/button_calc.dart';
+import 'package:currency_converter/src/shared/colors.dart';
 import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow;
 import 'package:flutter_inset_box_shadow/flutter_inset_box_shadow.dart';
 
-class ButtonNeu extends StatefulWidget {
+class ButtonCalcWidget extends StatefulWidget {
   final ButtonCalc btn;
   final Color bgColor;
   final Function(ButtonCalc btn) func;
-  const ButtonNeu({super.key, required this.bgColor, required this.btn, required this.func});
+  const ButtonCalcWidget({super.key, required this.bgColor, required this.btn, required this.func});
 
   @override
-  State<ButtonNeu> createState() => _ButtonNeuState();
+  State<ButtonCalcWidget> createState() => _ButtonCalcWidgetState();
 }
 
-class _ButtonNeuState extends State<ButtonNeu> {
+class _ButtonCalcWidgetState extends State<ButtonCalcWidget> {
   bool isPressed = false;
   @override
   Widget build(BuildContext context) {
     Offset shadowDistance = isPressed ? const Offset(1, 1) : const Offset(2, 2);
     double blur = isPressed ? 2.0 : 4.0;
     return Padding(
-      padding: const EdgeInsets.all(12.0),
+      padding: const EdgeInsets.all(8.0),
       child: Listener(
         onPointerUp: (_) {
           widget.func(widget.btn);
@@ -29,8 +30,8 @@ class _ButtonNeuState extends State<ButtonNeu> {
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 60),
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(32),
-              color: widget.bgColor,
+              borderRadius: BorderRadius.circular(20),
+              color: widget.btn.bgColor ?? widget.bgColor,
               boxShadow: [
                 BoxShadow(
                   offset: -shadowDistance,
@@ -48,7 +49,7 @@ class _ButtonNeuState extends State<ButtonNeu> {
           child: Center(
             child: Text(
               widget.btn.value,
-              style: TextStyle(fontSize: 32),
+              style: TextStyle(fontSize: 32, color: widget.btn.bgColor == null ? ColorTheme.dark : Colors.white),
             ),
           ),
         ),
