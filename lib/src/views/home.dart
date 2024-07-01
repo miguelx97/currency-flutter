@@ -18,13 +18,17 @@ class _HomeState extends State<Home> {
   Calculator calculator = Calculator();
   List<ButtonCalc> buttons = getButtons();
   int selectedField = 1;
-  Conversor conversor = Conversor(
-    conversionRate: 0.025,
-  );
+  Conversor conversor = Conversor();
 
   updateFormula(ButtonCalc btn) {
     HapticFeedback.lightImpact();
     setState(() => calculator.add(btn));
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    conversor.selectCurrency('EUR', 'THB');
   }
 
   @override
@@ -43,30 +47,42 @@ class _HomeState extends State<Home> {
                 Column(
                   children: [
                     FieldFormulaWidget(
-                      value: selectedField == 1 ? calculator.formulaToString() : conversor.reverseConvert(calculator),
+                      value: selectedField == 1
+                          ? calculator.formulaToString()
+                          : conversor.convert(calculator),
                       currency: 'EUR',
                       selected: selectedField == 1,
                       bgColor: bgColor,
-                      onTap: () => setState(() {
-                        if(selectedField == 1) return;
-                        final String value = conversor.reverseConvert(calculator);
+                      onTap: () {
+                        if (selectedField == 1) return;
+                        setState(() {
+                          selectedField = 1;
+                        });
+
                         calculator.formula.clear();
-                        calculator.add(ButtonCalc(value: value, type: ButtonCalcType.number));
-                        selectedField = 1;
-                      }),
+                        calculator.add(ButtonCalc(
+                            value: conversor.result.toString(),
+                            type: ButtonCalcType.number));
+                      },
                     ),
                     FieldFormulaWidget(
-                      value: selectedField == 2 ? calculator.formulaToString() : conversor.convert(calculator),
+                      value: selectedField == 2
+                          ? calculator.formulaToString()
+                          : conversor.convert(calculator, reverse: true),
                       currency: 'BAHT',
                       selected: selectedField == 2,
                       bgColor: bgColor,
-                      onTap: () => setState(() {
-                        if(selectedField == 2) return;
-                        final String value = conversor.convert(calculator);
+                      onTap: () {
+                        if (selectedField == 2) return;
+                        setState(() {
+                          selectedField = 2;
+                        });
+
                         calculator.formula.clear();
-                        calculator.add(ButtonCalc(value: value, type: ButtonCalcType.number));
-                        selectedField = 2;
-                      }),
+                        calculator.add(ButtonCalc(
+                            value: conversor.result.toString(),
+                            type: ButtonCalcType.number));
+                      },
                     ),
                   ],
                 ),

@@ -1,5 +1,6 @@
 import 'package:currency_converter/src/models/calculator.dart';
 import 'package:currency_converter/src/shared/colors.dart';
+import 'package:currency_converter/src/shared/utils.dart';
 import 'package:flutter/material.dart';
 
 class ButtonCalc {
@@ -24,6 +25,7 @@ getButtons() {
       bgColor: ColorTheme.primary,
       func: (Calculator calc) {
         calc.formula.clear();
+        calc.add(ButtonCalc(value: '0', type: ButtonCalcType.number));
       },
     ),
     ButtonCalc(
@@ -40,7 +42,7 @@ getButtons() {
       bgColor: ColorTheme.primary,
       func: (calc) {
         String lastValue = calc.formula.last.value;
-        lastValue = (double.parse(lastValue) / 100).toStringAsFixed(2);
+        lastValue = roundNumberStr(double.parse(lastValue) / 100);
         calc.replaceLastNumber(lastValue);
       },
     ),

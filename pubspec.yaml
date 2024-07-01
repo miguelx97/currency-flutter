@@ -16,6 +16,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   function_tree: ^0.9.1
+  http: ^1.1.0
 
 dev_dependencies:
   flutter_test:

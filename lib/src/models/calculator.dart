@@ -1,4 +1,5 @@
 import 'package:currency_converter/src/models/button_calc.dart';
+import 'package:currency_converter/src/shared/utils.dart';
 import 'package:function_tree/function_tree.dart';
 
 class Calculator {
@@ -60,7 +61,7 @@ class Calculator {
     String expression = formulaToString();
     expression = expression.replaceAll('x', '*');
     try {
-      String result = expression.interpret().toStringAsFixed(2).replaceAll('.00', '');
+      String result = roundNumberStr(expression.interpret().toDouble());
       formula.clear();
       add(ButtonCalc(value: result, type: ButtonCalcType.number));
     } catch (e) {
@@ -68,7 +69,7 @@ class Calculator {
     }
   }
 
-  formulaToString() {
+  String formulaToString() {
     if (formula.isEmpty) return '0';
     return formula.map((e) {
       switch (e.type) {
@@ -81,5 +82,10 @@ class Calculator {
           return '';
       }
     }).join();
+  }
+
+  double getResultNumber() {
+    if (formula.isEmpty || isThereOperator()) return 0;
+    return double.parse(formula.map((e) => e.value).join());
   }
 }
