@@ -25,7 +25,8 @@ getButtons() {
       bgColor: ColorTheme.primary,
       func: (Calculator calc) {
         calc.formula.clear();
-        calc.add(ButtonCalc(value: '0', type: ButtonCalcType.number));
+        calc.calculate();
+        // calc.add(ButtonCalc(value: '0', type: ButtonCalcType.number));
       },
     ),
     ButtonCalc(

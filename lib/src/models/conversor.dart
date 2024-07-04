@@ -9,26 +9,37 @@ import 'package:http/http.dart';
 class Conversor {
   String? fromCurrency;
   String? toCurrency;
-  double? value;
+  double? value1;
   double? conversionRate;
-  double? result;
+  double? value2;
 
   Conversor({
     this.fromCurrency,
     this.toCurrency,
-    this.value,
+    this.value1 = 0,
     this.conversionRate,
-    this.result,
+    this.value2 = 0,
   });
 
   String convert(Calculator calc, {bool reverse = false}) {
-    if (calc.formula.isEmpty) return '0';
-    if (!calc.isThereOperator()) {
-      value = calc.getResultNumber();
-      double conversionRate = reverse ? 1 / this.conversionRate! : this.conversionRate!;
-      result = roundNumber(value! * conversionRate);
+    double? number = calc.getNumberToConvert();
+    return reverse ? reverseConvert(number) : directConvert(number);
+  }
+
+  directConvert(double? number) {
+    if (number != null) {
+      value1 = number;
+      value2 = roundNumber(value1! * conversionRate!);
     }
-    return roundNumberStr(result!);
+    return roundNumberStr(value2!);
+  }
+
+  reverseConvert(double? number) {
+    if (number != null) {
+      value2 = number;
+      value1 = roundNumber(value2! / conversionRate!);
+    }
+    return roundNumberStr(value2!);
   }
 
   Future<void> selectCurrency(String fromCurrency, String toCurrency) async {

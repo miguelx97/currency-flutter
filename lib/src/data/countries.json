@@ -1,786 +1,1274 @@
 [
-    {
-        "name": "Euro",
-        "iso": "EUR",
-        "symbol": "€",
-        "territory": "European Union",
-        "flag": "🇪🇺",
-        "position": "p"
-    },
-    {
-        "name": "United Arab Emirates Dirham",
-        "iso": "AED",
-        "symbol": "د.إ",
-        "territory": "United Arab Emirates",
-        "flag": "🇦🇪",
-        "position": "p"
-    },
-    {
-        "name": "Afghan Afghani",
-        "iso": "AFN",
-        "symbol": "؋",
-        "territory": "Afghanistan",
-        "flag": "🇦🇫",
-        "position": "p"
-    },
-    {
-        "name": "Albanian Lek",
-        "iso": "ALL",
-        "symbol": "L",
-        "territory": "Albania",
-        "flag": "🇦🇱",
-        "position": "p"
-    },
-    {
-        "name": "Armenian Dram",
-        "iso": "AMD",
-        "symbol": "֏",
-        "territory": "Armenia",
-        "flag": "🇦🇲",
-        "position": "p"
-    },
-    {
-        "name": "Netherlands Antillean Guilder",
-        "iso": "ANG",
-        "symbol": "ƒ",
-        "territory": "Netherlands Antilles",
-        "flag": "🇳🇱",
-        "position": "p"
-    },
-    {
-        "name": "Angolan Kwanza",
-        "iso": "AOA",
-        "symbol": "Kz",
-        "territory": "Angola",
-        "flag": "🇦🇴",
-        "position": "p"
-    },
-    {
-        "name": "Argentine Peso",
-        "iso": "ARS",
-        "symbol": "$",
-        "territory": "Argentina",
-        "flag": "🇦🇷",
-        "position": "p"
-    },
-    {
-        "name": "Australian Dollar",
-        "iso": "AUD",
-        "symbol": "$",
-        "territory": "Australia",
-        "flag": "🇦🇺",
-        "position": "p"
-    },
-    {
-        "name": "Aruban Florin",
-        "iso": "AWG",
-        "symbol": "ƒ",
-        "territory": "Aruba",
-        "flag": "🇦🇼",
-        "position": "p"
-    },
-    {
-        "name": "Azerbaijani Manat",
-        "iso": "AZN",
-        "symbol": "₼",
-        "territory": "Azerbaijan",
-        "flag": "🇦🇿",
-        "position": "p"
-    },
-    {
-        "name": "Bosnia-Herzegovina Convertible Mark",
-        "iso": "BAM",
-        "symbol": "KM",
-        "territory": "Bosnia and Herzegovina",
-        "flag": "🇧🇦",
-        "position": "p"
-    },
-    {
-        "name": "Barbadian Dollar",
-        "iso": "BBD",
-        "symbol": "$",
-        "territory": "Barbados",
-        "flag": "🇧🇧",
-        "position": "p"
-    },
-    {
-        "name": "Bangladeshi Taka",
-        "iso": "BDT",
-        "symbol": "৳",
-        "territory": "Bangladesh",
-        "flag": "🇧🇩",
-        "position": "p"
-    },
-    {
-        "name": "Bulgarian Lev",
-        "iso": "BGN",
-        "symbol": "лв",
-        "territory": "Bulgaria",
-        "flag": "🇧🇬",
-        "position": "p"
-    },
-    {
-        "name": "Bahraini Dinar",
-        "iso": "BHD",
-        "symbol": ".د.ب",
-        "territory": "Bahrain",
-        "flag": "🇧🇭",
-        "position": "p"
-    },
-    {
-        "name": "Burundian Franc",
-        "iso": "BIF",
-        "symbol": "FBu",
-        "territory": "Burundi",
-        "flag": "🇧🇮",
-        "position": "s"
-    },
-    {
-        "name": "Bermudian Dollar",
-        "iso": "BMD",
-        "symbol": "$",
-        "territory": "Bermuda",
-        "flag": "🇧🇲",
-        "position": "p"
-    },
-    {
-        "name": "Brunei Dollar",
-        "iso": "BND",
-        "symbol": "$",
-        "territory": "Brunei",
-        "flag": "🇧🇳",
-        "position": "p"
-    },
-    {
-        "name": "Bolivian Boliviano",
-        "iso": "BOB",
-        "symbol": "Bs.",
-        "territory": "Bolivia",
-        "flag": "🇧🇴",
-        "position": "p"
-    },
-    {
-        "name": "Brazilian Real",
-        "iso": "BRL",
-        "symbol": "R$",
-        "territory": "Brazil",
-        "flag": "🇧🇷",
-        "position": "p"
-    },
-    {
-        "name": "Bahamian Dollar",
-        "iso": "BSD",
-        "symbol": "$",
-        "territory": "Bahamas",
-        "flag": "🇧🇸",
-        "position": "p"
-    },
-    {
-        "name": "Bhutanese Ngultrum",
-        "iso": "BTN",
-        "symbol": "Nu.",
-        "territory": "Bhutan",
-        "flag": "🇧🇹",
-        "position": "p"
-    },
-    {
-        "name": "Botswana Pula",
-        "iso": "BWP",
-        "symbol": "P",
-        "territory": "Botswana",
-        "flag": "🇧🇼",
-        "position": "p"
-    },
-    {
-        "name": "Belarusian Ruble",
-        "iso": "BYN",
-        "symbol": "Br",
-        "territory": "Belarus",
-        "flag": "🇧🇾",
-        "position": "p"
-    },
-    {
-        "name": "Belize Dollar",
-        "iso": "BZD",
-        "symbol": "$",
-        "territory": "Belize",
-        "flag": "🇧🇿",
-        "position": "p"
-    },
-    {
-        "name": "Canadian Dollar",
-        "iso": "CAD",
-        "symbol": "$",
-        "territory": "Canada",
-        "flag": "🇨🇦",
-        "position": "p"
-    },
-    {
-        "name": "Congolese Franc",
-        "iso": "CDF",
-        "symbol": "FC",
-        "territory": "Democratic Republic of the Congo",
-        "flag": "🇨🇩",
-        "position": "p"
-    },
-    {
-        "name": "Swiss Franc",
-        "iso": "CHF",
-        "symbol": "CHF",
-        "territory": "Switzerland",
-        "flag": "🇨🇭",
-        "position": "p"
-    },
-    {
-        "name": "Chilean Peso",
-        "iso": "CLP",
-        "symbol": "$",
-        "territory": "Chile",
-        "flag": "🇨🇱",
-        "position": "p"
-    },
-    {
-        "name": "Chinese Yuan",
-        "iso": "CNY",
-        "symbol": "¥",
-        "territory": "China",
-        "flag": "🇨🇳",
-        "position": "p"
-    },
-    {
-        "name": "Colombian Peso",
-        "iso": "COP",
-        "symbol": "$",
-        "territory": "Colombia",
-        "flag": "🇨🇴",
-        "position": "p"
-    },
-    {
-        "name": "Costa Rican Colón",
-        "iso": "CRC",
-        "symbol": "₡",
-        "territory": "Costa Rica",
-        "flag": "🇨🇷",
-        "position": "p"
-    },
-    {
-        "name": "Cuban Peso",
-        "iso": "CUP",
-        "symbol": "$",
-        "territory": "Cuba",
-        "flag": "🇨🇺",
-        "position": "p"
-    },
-    {
-        "name": "Cape Verdean Escudo",
-        "iso": "CVE",
-        "symbol": "Esc",
-        "territory": "Cape Verde",
-        "flag": "🇨🇻",
-        "position": "p"
-    },
-    {
-        "name": "Czech Koruna",
-        "iso": "CZK",
-        "symbol": "Kč",
-        "territory": "Czech Republic",
-        "flag": "🇨🇿",
-        "position": "p"
-    },
-    {
-        "name": "Djiboutian Franc",
-        "iso": "DJF",
-        "symbol": "Fdj",
-        "territory": "Djibouti",
-        "flag": "🇩🇯",
-        "position": "p"
-    },
-    {
-        "name": "Danish Krone",
-        "iso": "DKK",
-        "symbol": "kr",
-        "territory": "Denmark",
-        "flag": "🇩🇰",
-        "position": "p"
-    },
-    {
-        "name": "Dominican Peso",
-        "iso": "DOP",
-        "symbol": "$",
-        "territory": "Dominican Republic",
-        "flag": "🇩🇴",
-        "position": "p"
-    },
-    {
-        "name": "Algerian Dinar",
-        "iso": "DZD",
-        "symbol": "دج",
-        "territory": "Algeria",
-        "flag": "🇩🇿",
-        "position": "p"
-    },
-    {
-        "name": "Egyptian Pound",
-        "iso": "EGP",
-        "symbol": "£",
-        "territory": "Egypt",
-        "flag": "🇪🇬",
-        "position": "p"
-    },
-    {
-        "name": "Eritrean Nakfa",
-        "iso": "ERN",
-        "symbol": "Nfk",
-        "territory": "Eritrea",
-        "flag": "🇪🇷",
-        "position": "p"
-    },
-    {
-        "name": "Ethiopian Birr",
-        "iso": "ETB",
-        "symbol": "Br",
-        "territory": "Ethiopia",
-        "flag": "🇪🇹",
-        "position": "p"
-    },
-    {
-        "name": "Fijian Dollar",
-        "iso": "FJD",
-        "symbol": "$",
-        "territory": "Fiji",
-        "flag": "🇫🇯",
-        "position": "p"
-    },
-    {
-        "name": "Falkland Islands Pound",
-        "iso": "FKP",
-        "symbol": "£",
-        "territory": "Falkland Islands",
-        "flag": "🇫🇰",
-        "position": "p"
-    },
-    {
-        "name": "Danish Krone",
-        "iso": "FOK",
-        "symbol": "kr",
-        "territory": "Faroe Islands",
-        "flag": "🇫🇴",
-        "position": "p"
-    },
-    {
-        "name": "British Pound Sterling",
-        "iso": "GBP",
-        "symbol": "£",
-        "territory": "United Kingdom",
-        "flag": "🇬🇧",
-        "position": "p"
-    },
-    {
-        "name": "Georgian Lari",
-        "iso": "GEL",
-        "symbol": "₾",
-        "territory": "Georgia",
-        "flag": "🇬🇪",
-        "position": "p"
-    },
-    {
-        "name": "Guernsey Pound",
-        "iso": "GGP",
-        "symbol": "£",
-        "territory": "Guernsey",
-        "flag": "🇬🇬",
-        "position": "p"
-    },
-    {
-        "name": "Ghanaian Cedi",
-        "iso": "GHS",
-        "symbol": "₵",
-        "territory": "Ghana",
-        "flag": "🇬🇭",
-        "position": "p"
-    },
-    {
-        "name": "Gibraltar Pound",
-        "iso": "GIP",
-        "symbol": "£",
-        "territory": "Gibraltar",
-        "flag": "🇬🇮",
-        "position": "p"
-    },
-    {
-        "name": "Gambian Dalasi",
-        "iso": "GMD",
-        "symbol": "D",
-        "territory": "Gambia",
-        "flag": "🇬🇲",
-        "position": "p"
-    },
-    {
-        "name": "Guinean Franc",
-        "iso": "GNF",
-        "symbol": "Fr",
-        "territory": "Guinea",
-        "flag": "🇬🇳",
-        "position": "p"
-    },
-    {
-        "name": "Guatemalan Quetzal",
-        "iso": "GTQ",
-        "symbol": "Q",
-        "territory": "Guatemala",
-        "flag": "🇬🇹",
-        "position": "p"
-    },
-    {
-        "name": "Guyanese Dollar",
-        "iso": "GYD",
-        "symbol": "$",
-        "territory": "Guyana",
-        "flag": "🇬🇾",
-        "position": "p"
-    },
-    {
-        "name": "Hong Kong Dollar",
-        "iso": "HKD",
-        "symbol": "$",
-        "territory": "Hong Kong",
-        "flag": "🇭🇰",
-        "position": "p"
-    },
-    {
-        "name": "Honduran Lempira",
-        "iso": "HNL",
-        "symbol": "L",
-        "territory": "Honduras",
-        "flag": "🇭🇳",
-        "position": "p"
-    },
-    {
-        "name": "Croatian Kuna",
-        "iso": "HRK",
-        "symbol": "kn",
-        "territory": "Croatia",
-        "flag": "🇭🇷",
-        "position": "p"
-    },
-    {
-        "name": "Haitian Gourde",
-        "iso": "HTG",
-        "symbol": "G",
-        "territory": "Haiti",
-        "flag": "🇭🇹",
-        "position": "p"
-    },
-    {
-        "name": "Hungarian Forint",
-        "iso": "HUF",
-        "symbol": "Ft",
-        "territory": "Hungary",
-        "flag": "🇭🇺",
-        "position": "p"
-    },
-    {
-        "name": "Indonesian Rupiah",
-        "iso": "IDR",
-        "symbol": "Rp",
-        "territory": "Indonesia",
-        "flag": "🇮🇩",
-        "position": "p"
-    },
-    {
-        "name": "Israeli New Shekel",
-        "iso": "ILS",
-        "symbol": "₪",
-        "territory": "Israel",
-        "flag": "🇮🇱",
-        "position": "p"
-    },
-    {
-        "name": "Isle of Man Pound",
-        "iso": "IMP",
-        "symbol": "£",
-        "territory": "Isle of Man",
-        "flag": "🇮🇲",
-        "position": "p"
-    },
-    {
-        "name": "Indian Rupee",
-        "iso": "INR",
-        "symbol": "₹",
-        "territory": "India",
-        "flag": "🇮🇳",
-        "position": "p"
-    },
-    {
-        "name": "Iraqi Dinar",
-        "iso": "IQD",
-        "symbol": "ع.د",
-        "territory": "Iraq",
-        "flag": "🇮🇶",
-        "position": "p"
-    },
-    {
-        "name": "Iranian Rial",
-        "iso": "IRR",
-        "symbol": "﷼",
-        "territory": "Iran",
-        "flag": "🇮🇷",
-        "position": "p"
-    },
-    {
-        "name": "Icelandic Króna",
-        "iso": "ISK",
-        "symbol": "kr",
-        "territory": "Iceland",
-        "flag": "🇮🇸",
-        "position": "p"
-    },
-    {
-        "name": "Jersey Pound",
-        "iso": "JEP",
-        "symbol": "£",
-        "territory": "Jersey",
-        "flag": "🇯🇪",
-        "position": "p"
-    },
-    {
-        "name": "Jamaican Dollar",
-        "iso": "JMD",
-        "symbol": "$",
-        "territory": "Jamaica",
-        "flag": "🇯🇲",
-        "position": "p"
-    },
-    {
-        "name": "Jordanian Dinar",
-        "iso": "JOD",
-        "symbol": "د.ا",
-        "territory": "Jordan",
-        "flag": "🇯🇴",
-        "position": "p"
-    },
-    {
-        "name": "Japanese Yen",
-        "iso": "JPY",
-        "symbol": "¥",
-        "territory": "Japan",
-        "flag": "🇯🇵",
-        "position": "p"
-    },
-    {
-        "name": "Kenyan Shilling",
-        "iso": "KES",
-        "symbol": "Sh",
-        "territory": "Kenya",
-        "flag": "🇰🇪",
-        "position": "p"
-    },
-    {
-        "name": "Kyrgyzstani Som",
-        "iso": "KGS",
-        "symbol": "с",
-        "territory": "Kyrgyzstan",
-        "flag": "🇰🇬",
-        "position": "p"
-    },
-    {
-        "name": "Cambodian Riel",
-        "iso": "KHR",
-        "symbol": "៛",
-        "territory": "Cambodia",
-        "flag": "🇰🇭",
-        "position": "p"
-    },
-    {
-        "name": "Kiribati Dollar",
-        "iso": "KID",
-        "symbol": "$",
-        "territory": "Kiribati",
-        "flag": "🇰🇮",
-        "position": "p"
-    },
-    {
-        "name": "Comorian Franc",
-        "iso": "KMF",
-        "symbol": "CF",
-        "territory": "Comoros",
-        "flag": "🇰🇲",
-        "position": "p"
-    },
-    {
-        "name": "South Korean Won",
-        "iso": "KRW",
-        "symbol": "₩",
-        "territory": "South Korea",
-        "flag": "🇰🇷",
-        "position": "p"
-    },
-    {
-        "name": "Kuwaiti Dinar",
-        "iso": "KWD",
-        "symbol": "د.ك",
-        "territory": "Kuwait",
-        "flag": "🇰🇼",
-        "position": "p"
-    },
-    {
-        "name": "Cayman Islands Dollar",
-        "iso": "KYD",
-        "symbol": "$",
-        "territory": "Cayman Islands",
-        "flag": "🇰🇾",
-        "position": "p"
-    },
-    {
-        "name": "Kazakhstani Tenge",
-        "iso": "KZT",
-        "symbol": "₸",
-        "territory": "Kazakhstan",
-        "flag": "🇰🇿",
-        "position": "p"
-    },
-    {
-        "name": "Lao Kip",
-        "iso": "LAK",
-        "symbol": "₭",
-        "territory": "Laos",
-        "flag": "🇱🇦",
-        "position": "p"
-    },
-    {
-        "name": "Lebanese Pound",
-        "iso": "LBP",
-        "symbol": "ل.ل",
-        "territory": "Lebanon",
-        "flag": "🇱🇧",
-        "position": "p"
-    },
-    {
-        "name": "Sri Lankan Rupee",
-        "iso": "LKR",
-        "symbol": "Rs",
-        "territory": "Sri Lanka",
-        "flag": "🇱🇰",
-        "position": "p"
-    },
-    {
-        "name": "Liberian Dollar",
-        "iso": "LRD",
-        "symbol": "$",
-        "territory": "Liberia",
-        "flag": "🇱🇷",
-        "position": "p"
-    },
-    {
-        "name": "Lesotho Loti",
-        "iso": "LSL",
-        "symbol": "L",
-        "territory": "Lesotho",
-        "flag": "🇱🇸",
-        "position": "p"
-    },
-    {
-        "name": "Libyan Dinar",
-        "iso": "LYD",
-        "symbol": "ل.د",
-        "territory": "Libya",
-        "flag": "🇱🇾",
-        "position": "p"
-    },
-    {
-        "name": "Moroccan Dirham",
-        "iso": "MAD",
-        "symbol": "د.م.",
-        "territory": "Morocco",
-        "flag": "🇲🇦",
-        "position": "p"
-    },
-    {
-        "name": "Moldovan Leu",
-        "iso": "MDL",
-        "symbol": "L",
-        "territory": "Moldova",
-        "flag": "🇲🇩",
-        "position": "p"
-    },
-    {
-        "name": "Malagasy Ariary",
-        "iso": "MGA",
-        "symbol": "Ar",
-        "territory": "Madagascar",
-        "flag": "🇲🇬",
-        "position": "p"
-    },
-    {
-        "name": "Macedonian Denar",
-        "iso": "MKD",
-        "symbol": "ден",
-        "territory": "North Macedonia",
-        "flag": "🇲🇰",
-        "position": "p"
-    },
-    {
-        "name": "Burmese Kyat",
-        "iso": "MMK",
-        "symbol": "Ks",
-        "territory": "Myanmar",
-        "flag": "🇲🇲",
-        "position": "p"
-    },
-    {
-        "name": "Mongolian Tögrög",
-        "iso": "MNT",
-        "symbol": "₮",
-        "territory": "Mongolia",
-        "flag": "🇲🇳",
-        "position": "p"
-    },
-    {
-        "name": "Macanese Pataca",
-        "iso": "MOP",
-        "symbol": "P",
-        "territory": "Macau",
-        "flag": "🇲🇴",
-        "position": "p"
-    },
-    {
-        "name": "Mauritanian Ouguiya",
-        "iso": "MRU",
-        "symbol": "UM",
-        "territory": "Mauritania",
-        "flag": "🇲🇷",
-        "position": "p"
-    },
-    {
-        "name": "Mauritian Rupee",
-        "iso": "MUR",
-        "symbol": "₨",
-        "territory": "Mauritius",
-        "flag": "🇲🇺",
-        "position": "p"
-    },
-    {
-        "name": "Maldivian Rufiyaa",
-        "iso": "MVR",
-        "symbol": "Rf",
-        "territory": "Maldives",
-        "flag": "🇲🇻",
-        "position": "p"
-    },
-    {
-        "name": "Malawian Kwacha",
-        "iso": "MWK",
-        "symbol": "MK",
-        "territory": "Malawi",
-        "flag": "🇲🇼",
-        "position": "p"
-    },
-    {
-        "name": "Mexican Peso",
-        "iso": "MXN",
-        "symbol": "$",
-        "territory": "Mexico",
-        "flag": "🇲🇽",
-        "position": "p"
-    }
+  {
+    "name": "Euro",
+    "iso": "EUR",
+    "symbol": "€",
+    "territory": "European Union",
+    "flag": "🇪🇺",
+    "position": "p"
+  },
+  {
+    "name": "United Arab Emirates Dirham",
+    "iso": "AED",
+    "symbol": "د.إ",
+    "territory": "United Arab Emirates",
+    "flag": "🇦🇪",
+    "position": "p"
+  },
+  {
+    "name": "Afghan Afghani",
+    "iso": "AFN",
+    "symbol": "؋",
+    "territory": "Afghanistan",
+    "flag": "🇦🇫",
+    "position": "p"
+  },
+  {
+    "name": "Albanian Lek",
+    "iso": "ALL",
+    "symbol": "L",
+    "territory": "Albania",
+    "flag": "🇦🇱",
+    "position": "p"
+  },
+  {
+    "name": "Armenian Dram",
+    "iso": "AMD",
+    "symbol": "֏",
+    "territory": "Armenia",
+    "flag": "🇦🇲",
+    "position": "p"
+  },
+  {
+    "name": "Netherlands Antillean Guilder",
+    "iso": "ANG",
+    "symbol": "ƒ",
+    "territory": "Netherlands Antilles",
+    "flag": "🇳🇱",
+    "position": "p"
+  },
+  {
+    "name": "Angolan Kwanza",
+    "iso": "AOA",
+    "symbol": "Kz",
+    "territory": "Angola",
+    "flag": "🇦🇴",
+    "position": "p"
+  },
+  {
+    "name": "Argentine Peso",
+    "iso": "ARS",
+    "symbol": "$",
+    "territory": "Argentina",
+    "flag": "🇦🇷",
+    "position": "p"
+  },
+  {
+    "name": "Australian Dollar",
+    "iso": "AUD",
+    "symbol": "$",
+    "territory": "Australia",
+    "flag": "🇦🇺",
+    "position": "p"
+  },
+  {
+    "name": "Aruban Florin",
+    "iso": "AWG",
+    "symbol": "ƒ",
+    "territory": "Aruba",
+    "flag": "🇦🇼",
+    "position": "p"
+  },
+  {
+    "name": "Azerbaijani Manat",
+    "iso": "AZN",
+    "symbol": "₼",
+    "territory": "Azerbaijan",
+    "flag": "🇦🇿",
+    "position": "p"
+  },
+  {
+    "name": "Bosnia-Herzegovina Convertible Mark",
+    "iso": "BAM",
+    "symbol": "KM",
+    "territory": "Bosnia and Herzegovina",
+    "flag": "🇧🇦",
+    "position": "p"
+  },
+  {
+    "name": "Barbadian Dollar",
+    "iso": "BBD",
+    "symbol": "$",
+    "territory": "Barbados",
+    "flag": "🇧🇧",
+    "position": "p"
+  },
+  {
+    "name": "Bangladeshi Taka",
+    "iso": "BDT",
+    "symbol": "৳",
+    "territory": "Bangladesh",
+    "flag": "🇧🇩",
+    "position": "p"
+  },
+  {
+    "name": "Bulgarian Lev",
+    "iso": "BGN",
+    "symbol": "лв",
+    "territory": "Bulgaria",
+    "flag": "🇧🇬",
+    "position": "p"
+  },
+  {
+    "name": "Bahraini Dinar",
+    "iso": "BHD",
+    "symbol": ".د.ب",
+    "territory": "Bahrain",
+    "flag": "🇧🇭",
+    "position": "p"
+  },
+  {
+    "name": "Burundian Franc",
+    "iso": "BIF",
+    "symbol": "FBu",
+    "territory": "Burundi",
+    "flag": "🇧🇮",
+    "position": "s"
+  },
+  {
+    "name": "Bermudian Dollar",
+    "iso": "BMD",
+    "symbol": "$",
+    "territory": "Bermuda",
+    "flag": "🇧🇲",
+    "position": "p"
+  },
+  {
+    "name": "Brunei Dollar",
+    "iso": "BND",
+    "symbol": "$",
+    "territory": "Brunei",
+    "flag": "🇧🇳",
+    "position": "p"
+  },
+  {
+    "name": "Bolivian Boliviano",
+    "iso": "BOB",
+    "symbol": "Bs.",
+    "territory": "Bolivia",
+    "flag": "🇧🇴",
+    "position": "p"
+  },
+  {
+    "name": "Brazilian Real",
+    "iso": "BRL",
+    "symbol": "R$",
+    "territory": "Brazil",
+    "flag": "🇧🇷",
+    "position": "p"
+  },
+  {
+    "name": "Bahamian Dollar",
+    "iso": "BSD",
+    "symbol": "$",
+    "territory": "Bahamas",
+    "flag": "🇧🇸",
+    "position": "p"
+  },
+  {
+    "name": "Bhutanese Ngultrum",
+    "iso": "BTN",
+    "symbol": "Nu.",
+    "territory": "Bhutan",
+    "flag": "🇧🇹",
+    "position": "p"
+  },
+  {
+    "name": "Botswana Pula",
+    "iso": "BWP",
+    "symbol": "P",
+    "territory": "Botswana",
+    "flag": "🇧🇼",
+    "position": "p"
+  },
+  {
+    "name": "Belarusian Ruble",
+    "iso": "BYN",
+    "symbol": "Br",
+    "territory": "Belarus",
+    "flag": "🇧🇾",
+    "position": "p"
+  },
+  {
+    "name": "Belize Dollar",
+    "iso": "BZD",
+    "symbol": "$",
+    "territory": "Belize",
+    "flag": "🇧🇿",
+    "position": "p"
+  },
+  {
+    "name": "Canadian Dollar",
+    "iso": "CAD",
+    "symbol": "$",
+    "territory": "Canada",
+    "flag": "🇨🇦",
+    "position": "p"
+  },
+  {
+    "name": "Congolese Franc",
+    "iso": "CDF",
+    "symbol": "FC",
+    "territory": "Democratic Republic of the Congo",
+    "flag": "🇨🇩",
+    "position": "p"
+  },
+  {
+    "name": "Swiss Franc",
+    "iso": "CHF",
+    "symbol": "CHF",
+    "territory": "Switzerland",
+    "flag": "🇨🇭",
+    "position": "p"
+  },
+  {
+    "name": "Chilean Peso",
+    "iso": "CLP",
+    "symbol": "$",
+    "territory": "Chile",
+    "flag": "🇨🇱",
+    "position": "p"
+  },
+  {
+    "name": "Chinese Yuan",
+    "iso": "CNY",
+    "symbol": "¥",
+    "territory": "China",
+    "flag": "🇨🇳",
+    "position": "p"
+  },
+  {
+    "name": "Colombian Peso",
+    "iso": "COP",
+    "symbol": "$",
+    "territory": "Colombia",
+    "flag": "🇨🇴",
+    "position": "p"
+  },
+  {
+    "name": "Costa Rican Colón",
+    "iso": "CRC",
+    "symbol": "₡",
+    "territory": "Costa Rica",
+    "flag": "🇨🇷",
+    "position": "p"
+  },
+  {
+    "name": "Cuban Peso",
+    "iso": "CUP",
+    "symbol": "$",
+    "territory": "Cuba",
+    "flag": "🇨🇺",
+    "position": "p"
+  },
+  {
+    "name": "Cape Verdean Escudo",
+    "iso": "CVE",
+    "symbol": "Esc",
+    "territory": "Cape Verde",
+    "flag": "🇨🇻",
+    "position": "p"
+  },
+  {
+    "name": "Czech Koruna",
+    "iso": "CZK",
+    "symbol": "Kč",
+    "territory": "Czech Republic",
+    "flag": "🇨🇿",
+    "position": "p"
+  },
+  {
+    "name": "Djiboutian Franc",
+    "iso": "DJF",
+    "symbol": "Fdj",
+    "territory": "Djibouti",
+    "flag": "🇩🇯",
+    "position": "p"
+  },
+  {
+    "name": "Danish Krone",
+    "iso": "DKK",
+    "symbol": "kr",
+    "territory": "Denmark",
+    "flag": "🇩🇰",
+    "position": "p"
+  },
+  {
+    "name": "Dominican Peso",
+    "iso": "DOP",
+    "symbol": "$",
+    "territory": "Dominican Republic",
+    "flag": "🇩🇴",
+    "position": "p"
+  },
+  {
+    "name": "Algerian Dinar",
+    "iso": "DZD",
+    "symbol": "دج",
+    "territory": "Algeria",
+    "flag": "🇩🇿",
+    "position": "p"
+  },
+  {
+    "name": "Egyptian Pound",
+    "iso": "EGP",
+    "symbol": "£",
+    "territory": "Egypt",
+    "flag": "🇪🇬",
+    "position": "p"
+  },
+  {
+    "name": "Eritrean Nakfa",
+    "iso": "ERN",
+    "symbol": "Nfk",
+    "territory": "Eritrea",
+    "flag": "🇪🇷",
+    "position": "p"
+  },
+  {
+    "name": "Ethiopian Birr",
+    "iso": "ETB",
+    "symbol": "Br",
+    "territory": "Ethiopia",
+    "flag": "🇪🇹",
+    "position": "p"
+  },
+  {
+    "name": "Fijian Dollar",
+    "iso": "FJD",
+    "symbol": "$",
+    "territory": "Fiji",
+    "flag": "🇫🇯",
+    "position": "p"
+  },
+  {
+    "name": "Falkland Islands Pound",
+    "iso": "FKP",
+    "symbol": "£",
+    "territory": "Falkland Islands",
+    "flag": "🇫🇰",
+    "position": "p"
+  },
+  {
+    "name": "Danish Krone",
+    "iso": "FOK",
+    "symbol": "kr",
+    "territory": "Faroe Islands",
+    "flag": "🇫🇴",
+    "position": "p"
+  },
+  {
+    "name": "British Pound Sterling",
+    "iso": "GBP",
+    "symbol": "£",
+    "territory": "United Kingdom",
+    "flag": "🇬🇧",
+    "position": "p"
+  },
+  {
+    "name": "Georgian Lari",
+    "iso": "GEL",
+    "symbol": "₾",
+    "territory": "Georgia",
+    "flag": "🇬🇪",
+    "position": "p"
+  },
+  {
+    "name": "Guernsey Pound",
+    "iso": "GGP",
+    "symbol": "£",
+    "territory": "Guernsey",
+    "flag": "🇬🇬",
+    "position": "p"
+  },
+  {
+    "name": "Ghanaian Cedi",
+    "iso": "GHS",
+    "symbol": "₵",
+    "territory": "Ghana",
+    "flag": "🇬🇭",
+    "position": "p"
+  },
+  {
+    "name": "Gibraltar Pound",
+    "iso": "GIP",
+    "symbol": "£",
+    "territory": "Gibraltar",
+    "flag": "🇬🇮",
+    "position": "p"
+  },
+  {
+    "name": "Gambian Dalasi",
+    "iso": "GMD",
+    "symbol": "D",
+    "territory": "Gambia",
+    "flag": "🇬🇲",
+    "position": "p"
+  },
+  {
+    "name": "Guinean Franc",
+    "iso": "GNF",
+    "symbol": "Fr",
+    "territory": "Guinea",
+    "flag": "🇬🇳",
+    "position": "p"
+  },
+  {
+    "name": "Guatemalan Quetzal",
+    "iso": "GTQ",
+    "symbol": "Q",
+    "territory": "Guatemala",
+    "flag": "🇬🇹",
+    "position": "p"
+  },
+  {
+    "name": "Guyanese Dollar",
+    "iso": "GYD",
+    "symbol": "$",
+    "territory": "Guyana",
+    "flag": "🇬🇾",
+    "position": "p"
+  },
+  {
+    "name": "Hong Kong Dollar",
+    "iso": "HKD",
+    "symbol": "$",
+    "territory": "Hong Kong",
+    "flag": "🇭🇰",
+    "position": "p"
+  },
+  {
+    "name": "Honduran Lempira",
+    "iso": "HNL",
+    "symbol": "L",
+    "territory": "Honduras",
+    "flag": "🇭🇳",
+    "position": "p"
+  },
+  {
+    "name": "Croatian Kuna",
+    "iso": "HRK",
+    "symbol": "kn",
+    "territory": "Croatia",
+    "flag": "🇭🇷",
+    "position": "p"
+  },
+  {
+    "name": "Haitian Gourde",
+    "iso": "HTG",
+    "symbol": "G",
+    "territory": "Haiti",
+    "flag": "🇭🇹",
+    "position": "p"
+  },
+  {
+    "name": "Hungarian Forint",
+    "iso": "HUF",
+    "symbol": "Ft",
+    "territory": "Hungary",
+    "flag": "🇭🇺",
+    "position": "p"
+  },
+  {
+    "name": "Indonesian Rupiah",
+    "iso": "IDR",
+    "symbol": "Rp",
+    "territory": "Indonesia",
+    "flag": "🇮🇩",
+    "position": "p"
+  },
+  {
+    "name": "Israeli New Shekel",
+    "iso": "ILS",
+    "symbol": "₪",
+    "territory": "Israel",
+    "flag": "🇮🇱",
+    "position": "p"
+  },
+  {
+    "name": "Isle of Man Pound",
+    "iso": "IMP",
+    "symbol": "£",
+    "territory": "Isle of Man",
+    "flag": "🇮🇲",
+    "position": "p"
+  },
+  {
+    "name": "Indian Rupee",
+    "iso": "INR",
+    "symbol": "₹",
+    "territory": "India",
+    "flag": "🇮🇳",
+    "position": "p"
+  },
+  {
+    "name": "Iraqi Dinar",
+    "iso": "IQD",
+    "symbol": "ع.د",
+    "territory": "Iraq",
+    "flag": "🇮🇶",
+    "position": "p"
+  },
+  {
+    "name": "Iranian Rial",
+    "iso": "IRR",
+    "symbol": "﷼",
+    "territory": "Iran",
+    "flag": "🇮🇷",
+    "position": "p"
+  },
+  {
+    "name": "Icelandic Króna",
+    "iso": "ISK",
+    "symbol": "kr",
+    "territory": "Iceland",
+    "flag": "🇮🇸",
+    "position": "p"
+  },
+  {
+    "name": "Jersey Pound",
+    "iso": "JEP",
+    "symbol": "£",
+    "territory": "Jersey",
+    "flag": "🇯🇪",
+    "position": "p"
+  },
+  {
+    "name": "Jamaican Dollar",
+    "iso": "JMD",
+    "symbol": "$",
+    "territory": "Jamaica",
+    "flag": "🇯🇲",
+    "position": "p"
+  },
+  {
+    "name": "Jordanian Dinar",
+    "iso": "JOD",
+    "symbol": "د.ا",
+    "territory": "Jordan",
+    "flag": "🇯🇴",
+    "position": "p"
+  },
+  {
+    "name": "Japanese Yen",
+    "iso": "JPY",
+    "symbol": "¥",
+    "territory": "Japan",
+    "flag": "🇯🇵",
+    "position": "p"
+  },
+  {
+    "name": "Kenyan Shilling",
+    "iso": "KES",
+    "symbol": "Sh",
+    "territory": "Kenya",
+    "flag": "🇰🇪",
+    "position": "p"
+  },
+  {
+    "name": "Kyrgyzstani Som",
+    "iso": "KGS",
+    "symbol": "с",
+    "territory": "Kyrgyzstan",
+    "flag": "🇰🇬",
+    "position": "p"
+  },
+  {
+    "name": "Cambodian Riel",
+    "iso": "KHR",
+    "symbol": "៛",
+    "territory": "Cambodia",
+    "flag": "🇰🇭",
+    "position": "p"
+  },
+  {
+    "name": "Kiribati Dollar",
+    "iso": "KID",
+    "symbol": "$",
+    "territory": "Kiribati",
+    "flag": "🇰🇮",
+    "position": "p"
+  },
+  {
+    "name": "Comorian Franc",
+    "iso": "KMF",
+    "symbol": "CF",
+    "territory": "Comoros",
+    "flag": "🇰🇲",
+    "position": "p"
+  },
+  {
+    "name": "South Korean Won",
+    "iso": "KRW",
+    "symbol": "₩",
+    "territory": "South Korea",
+    "flag": "🇰🇷",
+    "position": "p"
+  },
+  {
+    "name": "Kuwaiti Dinar",
+    "iso": "KWD",
+    "symbol": "د.ك",
+    "territory": "Kuwait",
+    "flag": "🇰🇼",
+    "position": "p"
+  },
+  {
+    "name": "Cayman Islands Dollar",
+    "iso": "KYD",
+    "symbol": "$",
+    "territory": "Cayman Islands",
+    "flag": "🇰🇾",
+    "position": "p"
+  },
+  {
+    "name": "Kazakhstani Tenge",
+    "iso": "KZT",
+    "symbol": "₸",
+    "territory": "Kazakhstan",
+    "flag": "🇰🇿",
+    "position": "p"
+  },
+  {
+    "name": "Lao Kip",
+    "iso": "LAK",
+    "symbol": "₭",
+    "territory": "Laos",
+    "flag": "🇱🇦",
+    "position": "p"
+  },
+  {
+    "name": "Lebanese Pound",
+    "iso": "LBP",
+    "symbol": "ل.ل",
+    "territory": "Lebanon",
+    "flag": "🇱🇧",
+    "position": "p"
+  },
+  {
+    "name": "Sri Lankan Rupee",
+    "iso": "LKR",
+    "symbol": "Rs",
+    "territory": "Sri Lanka",
+    "flag": "🇱🇰",
+    "position": "p"
+  },
+  {
+    "name": "Liberian Dollar",
+    "iso": "LRD",
+    "symbol": "$",
+    "territory": "Liberia",
+    "flag": "🇱🇷",
+    "position": "p"
+  },
+  {
+    "name": "Lesotho Loti",
+    "iso": "LSL",
+    "symbol": "L",
+    "territory": "Lesotho",
+    "flag": "🇱🇸",
+    "position": "p"
+  },
+  {
+    "name": "Libyan Dinar",
+    "iso": "LYD",
+    "symbol": "ل.د",
+    "territory": "Libya",
+    "flag": "🇱🇾",
+    "position": "p"
+  },
+  {
+    "name": "Moroccan Dirham",
+    "iso": "MAD",
+    "symbol": "د.م.",
+    "territory": "Morocco",
+    "flag": "🇲🇦",
+    "position": "p"
+  },
+  {
+    "name": "Moldovan Leu",
+    "iso": "MDL",
+    "symbol": "L",
+    "territory": "Moldova",
+    "flag": "🇲🇩",
+    "position": "p"
+  },
+  {
+    "name": "Malagasy Ariary",
+    "iso": "MGA",
+    "symbol": "Ar",
+    "territory": "Madagascar",
+    "flag": "🇲🇬",
+    "position": "p"
+  },
+  {
+    "name": "Macedonian Denar",
+    "iso": "MKD",
+    "symbol": "ден",
+    "territory": "North Macedonia",
+    "flag": "🇲🇰",
+    "position": "p"
+  },
+  {
+    "name": "Burmese Kyat",
+    "iso": "MMK",
+    "symbol": "Ks",
+    "territory": "Myanmar",
+    "flag": "🇲🇲",
+    "position": "p"
+  },
+  {
+    "name": "Mongolian Tögrög",
+    "iso": "MNT",
+    "symbol": "₮",
+    "territory": "Mongolia",
+    "flag": "🇲🇳",
+    "position": "p"
+  },
+  {
+    "name": "Macanese Pataca",
+    "iso": "MOP",
+    "symbol": "P",
+    "territory": "Macau",
+    "flag": "🇲🇴",
+    "position": "p"
+  },
+  {
+    "name": "Mauritanian Ouguiya",
+    "iso": "MRU",
+    "symbol": "UM",
+    "territory": "Mauritania",
+    "flag": "🇲🇷",
+    "position": "p"
+  },
+  {
+    "name": "Mauritian Rupee",
+    "iso": "MUR",
+    "symbol": "₨",
+    "territory": "Mauritius",
+    "flag": "🇲🇺",
+    "position": "p"
+  },
+  {
+    "name": "Maldivian Rufiyaa",
+    "iso": "MVR",
+    "symbol": "Rf",
+    "territory": "Maldives",
+    "flag": "🇲🇻",
+    "position": "p"
+  },
+  {
+    "name": "Malawian Kwacha",
+    "iso": "MWK",
+    "symbol": "MK",
+    "territory": "Malawi",
+    "flag": "🇲🇼",
+    "position": "p"
+  },
+  {
+    "name": "Mexican Peso",
+    "iso": "MXN",
+    "symbol": "$",
+    "territory": "Mexico",
+    "flag": "🇲🇽",
+    "position": "p"
+  },
+  {
+    "name": "Malaysian Ringgit",
+    "iso": "MYR",
+    "symbol": "RM",
+    "territory": "Malaysia",
+    "flag": "🇲🇾",
+    "position": "p"
+  },
+  {
+    "name": "Mozambican Metical",
+    "iso": "MZN",
+    "symbol": "MT",
+    "territory": "Mozambique",
+    "flag": "🇲🇿",
+    "position": "p"
+  },
+  {
+    "name": "Namibian Dollar",
+    "iso": "NAD",
+    "symbol": "$",
+    "territory": "Namibia",
+    "flag": "🇳🇦",
+    "position": "p"
+  },
+  {
+    "name": "Nigerian Naira",
+    "iso": "NGN",
+    "symbol": "₦",
+    "territory": "Nigeria",
+    "flag": "🇳🇬",
+    "position": "p"
+  },
+  {
+    "name": "Nicaraguan Córdoba",
+    "iso": "NIO",
+    "symbol": "C$",
+    "territory": "Nicaragua",
+    "flag": "🇳🇮",
+    "position": "p"
+  },
+  {
+    "name": "Norwegian Krone",
+    "iso": "NOK",
+    "symbol": "kr",
+    "territory": "Norway",
+    "flag": "🇳🇴",
+    "position": "p"
+  },
+  {
+    "name": "Nepalese Rupee",
+    "iso": "NPR",
+    "symbol": "₨",
+    "territory": "Nepal",
+    "flag": "🇳🇵",
+    "position": "p"
+  },
+  {
+    "name": "New Zealand Dollar",
+    "iso": "NZD",
+    "symbol": "$",
+    "territory": "New Zealand",
+    "flag": "🇳🇿",
+    "position": "p"
+  },
+  {
+    "name": "Omani Rial",
+    "iso": "OMR",
+    "symbol": "ر.ع.",
+    "territory": "Oman",
+    "flag": "🇴🇲",
+    "position": "p"
+  },
+  {
+    "name": "Panamanian Balboa",
+    "iso": "PAB",
+    "symbol": "B/.",
+    "territory": "Panama",
+    "flag": "🇵🇦",
+    "position": "p"
+  },
+  {
+    "name": "Peruvian Sol",
+    "iso": "PEN",
+    "symbol": "S/",
+    "territory": "Peru",
+    "flag": "🇵🇪",
+    "position": "p"
+  },
+  {
+    "name": "Papua New Guinean Kina",
+    "iso": "PGK",
+    "symbol": "K",
+    "territory": "Papua New Guinea",
+    "flag": "🇵🇬",
+    "position": "p"
+  },
+  {
+    "name": "Philippine Peso",
+    "iso": "PHP",
+    "symbol": "₱",
+    "territory": "Philippines",
+    "flag": "🇵🇭",
+    "position": "p"
+  },
+  {
+    "name": "Pakistani Rupee",
+    "iso": "PKR",
+    "symbol": "₨",
+    "territory": "Pakistan",
+    "flag": "🇵🇰",
+    "position": "p"
+  },
+  {
+    "name": "Polish Złoty",
+    "iso": "PLN",
+    "symbol": "zł",
+    "territory": "Poland",
+    "flag": "🇵🇱",
+    "position": "s"
+  },
+  {
+    "name": "Paraguayan Guaraní",
+    "iso": "PYG",
+    "symbol": "₲",
+    "territory": "Paraguay",
+    "flag": "🇵🇾",
+    "position": "p"
+  },
+  {
+    "name": "Qatari Riyal",
+    "iso": "QAR",
+    "symbol": "ر.ق",
+    "territory": "Qatar",
+    "flag": "🇶🇦",
+    "position": "p"
+  },
+  {
+    "name": "Romanian Leu",
+    "iso": "RON",
+    "symbol": "lei",
+    "territory": "Romania",
+    "flag": "🇷🇴",
+    "position": "s"
+  },
+  {
+    "name": "Serbian Dinar",
+    "iso": "RSD",
+    "symbol": "дин",
+    "territory": "Serbia",
+    "flag": "🇷🇸",
+    "position": "p"
+  },
+  {
+    "name": "Russian Ruble",
+    "iso": "RUB",
+    "symbol": "₽",
+    "territory": "Russia",
+    "flag": "🇷🇺",
+    "position": "p"
+  },
+  {
+    "name": "Rwandan Franc",
+    "iso": "RWF",
+    "symbol": "FRw",
+    "territory": "Rwanda",
+    "flag": "🇷🇼",
+    "position": "p"
+  },
+  {
+    "name": "Saudi Riyal",
+    "iso": "SAR",
+    "symbol": "ر.س",
+    "territory": "Saudi Arabia",
+    "flag": "🇸🇦",
+    "position": "p"
+  },
+  {
+    "name": "Solomon Islands Dollar",
+    "iso": "SBD",
+    "symbol": "$",
+    "territory": "Solomon Islands",
+    "flag": "🇸🇧",
+    "position": "p"
+  },
+  {
+    "name": "Seychellois Rupee",
+    "iso": "SCR",
+    "symbol": "₨",
+    "territory": "Seychelles",
+    "flag": "🇸🇨",
+    "position": "p"
+  },
+  {
+    "name": "Sudanese Pound",
+    "iso": "SDG",
+    "symbol": "ج.س.",
+    "territory": "Sudan",
+    "flag": "🇸🇩",
+    "position": "p"
+  },
+  {
+    "name": "Swedish Krona",
+    "iso": "SEK",
+    "symbol": "kr",
+    "territory": "Sweden",
+    "flag": "🇸🇪",
+    "position": "p"
+  },
+  {
+    "name": "Singapore Dollar",
+    "iso": "SGD",
+    "symbol": "$",
+    "territory": "Singapore",
+    "flag": "🇸🇬",
+    "position": "p"
+  },
+  {
+    "name": "Saint Helena Pound",
+    "iso": "SHP",
+    "symbol": "£",
+    "territory": "Saint Helena",
+    "flag": "🇸🇭",
+    "position": "p"
+  },
+  {
+    "name": "Sierra Leonean Leone",
+    "iso": "SLE",
+    "symbol": "Le",
+    "territory": "Sierra Leone",
+    "flag": "🇸🇱",
+    "position": "p"
+  },
+  {
+    "name": "Somali Shilling",
+    "iso": "SOS",
+    "symbol": "Sh",
+    "territory": "Somalia",
+    "flag": "🇸🇴",
+    "position": "p"
+  },
+  {
+    "name": "Surinamese Dollar",
+    "iso": "SRD",
+    "symbol": "$",
+    "territory": "Suriname",
+    "flag": "🇸🇷",
+    "position": "p"
+  },
+  {
+    "name": "South Sudanese Pound",
+    "iso": "SSP",
+    "symbol": "£",
+    "territory": "South Sudan",
+    "flag": "🇸🇸",
+    "position": "p"
+  },
+  {
+    "name": "São Tomé and Príncipe Dobra",
+    "iso": "STN",
+    "symbol": "Db",
+    "territory": "São Tomé and Príncipe",
+    "flag": "🇸🇹",
+    "position": "p"
+  },
+  {
+    "name": "Syrian Pound",
+    "iso": "SYP",
+    "symbol": "£S",
+    "territory": "Syria",
+    "flag": "🇸🇾",
+    "position": "p"
+  },
+  {
+    "name": "Swazi Lilangeni",
+    "iso": "SZL",
+    "symbol": "E",
+    "territory": "Eswatini",
+    "flag": "🇸🇿",
+    "position": "p"
+  },
+  {
+    "name": "Thai Baht",
+    "iso": "THB",
+    "symbol": "฿",
+    "territory": "Thailand",
+    "flag": "🇹🇭",
+    "position": "p"
+  },
+  {
+    "name": "Tajikistani Somoni",
+    "iso": "TJS",
+    "symbol": "SM",
+    "territory": "Tajikistan",
+    "flag": "🇹🇯",
+    "position": "p"
+  },
+  {
+    "name": "Turkmenistani Manat",
+    "iso": "TMT",
+    "symbol": "m",
+    "territory": "Turkmenistan",
+    "flag": "🇹🇲",
+    "position": "p"
+  },
+  {
+    "name": "Tunisian Dinar",
+    "iso": "TND",
+    "symbol": "د.ت",
+    "territory": "Tunisia",
+    "flag": "🇹🇳",
+    "position": "p"
+  },
+  {
+    "name": "Tongan Paʻanga",
+    "iso": "TOP",
+    "symbol": "T$",
+    "territory": "Tonga",
+    "flag": "🇹🇴",
+    "position": "p"
+  },
+  {
+    "name": "Turkish Lira",
+    "iso": "TRY",
+    "symbol": "₺",
+    "territory": "Turkey",
+    "flag": "🇹🇷",
+    "position": "p"
+  },
+  {
+    "name": "Trinidad and Tobago Dollar",
+    "iso": "TTD",
+    "symbol": "$",
+    "territory": "Trinidad and Tobago",
+    "flag": "🇹🇹",
+    "position": "p"
+  },
+  {
+    "name": "New Taiwan Dollar",
+    "iso": "TWD",
+    "symbol": "$",
+    "territory": "Taiwan",
+    "flag": "🇹🇼",
+    "position": "p"
+  },
+  {
+    "name": "Tanzanian Shilling",
+    "iso": "TZS",
+    "symbol": "Sh",
+    "territory": "Tanzania",
+    "flag": "🇹🇿",
+    "position": "p"
+  },
+  {
+    "name": "Ukrainian Hryvnia",
+    "iso": "UAH",
+    "symbol": "₴",
+    "territory": "Ukraine",
+    "flag": "🇺🇦",
+    "position": "p"
+  },
+  {
+    "name": "Ugandan Shilling",
+    "iso": "UGX",
+    "symbol": "Sh",
+    "territory": "Uganda",
+    "flag": "🇺🇬",
+    "position": "p"
+  },
+  {
+    "name": "United States Dollar",
+    "iso": "USD",
+    "symbol": "$",
+    "territory": "United States",
+    "flag": "🇺🇸",
+    "position": "p"
+  },
+  {
+    "name": "Uruguayan Peso",
+    "iso": "UYU",
+    "symbol": "$",
+    "territory": "Uruguay",
+    "flag": "🇺🇾",
+    "position": "p"
+  },
+  {
+    "name": "Uzbekistani Soʻm",
+    "iso": "UZS",
+    "symbol": "so'm",
+    "territory": "Uzbekistan",
+    "flag": "🇺🇿",
+    "position": "p"
+  },
+  {
+    "name": "Venezuelan Bolívar Soberano",
+    "iso": "VES",
+    "symbol": "Bs.",
+    "territory": "Venezuela",
+    "flag": "🇻🇪",
+    "position": "p"
+  },
+  {
+    "name": "Vietnamese Đồng",
+    "iso": "VND",
+    "symbol": "₫",
+    "territory": "Vietnam",
+    "flag": "🇻🇳",
+    "position": "s"
+  },
+  {
+    "name": "Vanuatu Vatu",
+    "iso": "VUV",
+    "symbol": "Vt",
+    "territory": "Vanuatu",
+    "flag": "🇻🇺",
+    "position": "p"
+  },
+  {
+    "name": "Samoan Tālā",
+    "iso": "WST",
+    "symbol": "T",
+    "territory": "Samoa",
+    "flag": "🇼🇸",
+    "position": "p"
+  },
+  {
+    "name": "Central African CFA Franc",
+    "iso": "XAF",
+    "symbol": "Fr",
+    "territory": "Central Africa",
+    "flag": "🇨🇫",
+    "position": "p"
+  },
+  {
+    "name": "East Caribbean Dollar",
+    "iso": "XCD",
+    "symbol": "$",
+    "territory": "East Caribbean",
+    "flag": "🇱🇨",
+    "position": "p"
+  },
+  {
+    "name": "West African CFA Franc",
+    "iso": "XOF",
+    "symbol": "Fr",
+    "territory": "West Africa",
+    "flag": "🇨🇮",
+    "position": "p"
+  },
+  {
+    "name": "CFP Franc",
+    "iso": "XPF",
+    "symbol": "Fr",
+    "territory": "French Polynesia",
+    "flag": "🇵🇫",
+    "position": "p"
+  },
+  {
+    "name": "Yemeni Rial",
+    "iso": "YER",
+    "symbol": "﷼",
+    "territory": "Yemen",
+    "flag": "🇾🇪",
+    "position": "p"
+  },
+  {
+    "name": "South African Rand",
+    "iso": "ZAR",
+    "symbol": "R",
+    "territory": "South Africa",
+    "flag": "🇿🇦",
+    "position": "s"
+  },
+  {
+    "name": "Zambian Kwacha",
+    "iso": "ZMW",
+    "symbol": "ZK",
+    "territory": "Zambia",
+    "flag": "🇿🇲",
+    "position": "p"
+  },
+  {
+    "name": "Zimbabwean Dollar",
+    "iso": "ZWL",
+    "symbol": "$",
+    "territory": "Zimbabwe",
+    "flag": "🇿🇼",
+    "position": "p"
+  }
 ]

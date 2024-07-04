@@ -5,7 +5,7 @@ import 'package:function_tree/function_tree.dart';
 class Calculator {
   List<ButtonCalc> formula = [];
 
-  add(ButtonCalc btn) {
+  add(ButtonCalc btn, {Function? onButtonAdded}) {
     if (formula.isNotEmpty && formula.last.type == ButtonCalcType.error) {
       formula.clear();
     }
@@ -14,7 +14,7 @@ class Calculator {
         if (formula.isEmpty || formula.last.type == ButtonCalcType.operator) {
           return;
         }
-        calculate();
+        calculate(onCalculate: onButtonAdded);
         if (formula.last.type == ButtonCalcType.operator) {
           formula.removeLast();
         }
@@ -37,6 +37,8 @@ class Calculator {
         formula.add(btn);
         break;
     }
+
+    if(onButtonAdded != null) onButtonAdded();
   }
 
   isThereOperator() {
@@ -57,7 +59,7 @@ class Calculator {
     }
   }
 
-  calculate() {
+  calculate({Function? onCalculate}) {
     String expression = formulaToString();
     expression = expression.replaceAll('x', '*');
     try {
@@ -84,8 +86,8 @@ class Calculator {
     }).join();
   }
 
-  double getResultNumber() {
-    if (formula.isEmpty || isThereOperator()) return 0;
+  double? getNumberToConvert() {
+    if (formula.isEmpty || isThereOperator()) return null;
     return double.parse(formula.map((e) => e.value).join());
   }
 }

@@ -22,7 +22,9 @@ class _HomeState extends State<Home> {
 
   updateFormula(ButtonCalc btn) {
     HapticFeedback.lightImpact();
-    setState(() => calculator.add(btn));
+    setState(() {
+      calculator.add(btn, onButtonAdded: () => conversor.convert(calculator, reverse: selectedField == 1));
+    });
   }
 
   @override
@@ -49,7 +51,7 @@ class _HomeState extends State<Home> {
                     FieldFormulaWidget(
                       value: selectedField == 1
                           ? calculator.formulaToString()
-                          : conversor.convert(calculator),
+                          : conversor.value2.toString(),
                       currency: 'EUR',
                       selected: selectedField == 1,
                       bgColor: bgColor,
@@ -60,15 +62,18 @@ class _HomeState extends State<Home> {
                         });
 
                         calculator.formula.clear();
-                        calculator.add(ButtonCalc(
-                            value: conversor.result.toString(),
-                            type: ButtonCalcType.number));
+
+                        if (conversor.value2 != null && conversor.value2 != 0) {
+                          calculator.add(ButtonCalc(
+                              value: conversor.value2.toString(),
+                              type: ButtonCalcType.number));
+                        }
                       },
                     ),
                     FieldFormulaWidget(
                       value: selectedField == 2
                           ? calculator.formulaToString()
-                          : conversor.convert(calculator, reverse: true),
+                          : conversor.value1.toString(),
                       currency: 'BAHT',
                       selected: selectedField == 2,
                       bgColor: bgColor,
@@ -79,9 +84,11 @@ class _HomeState extends State<Home> {
                         });
 
                         calculator.formula.clear();
-                        calculator.add(ButtonCalc(
-                            value: conversor.result.toString(),
-                            type: ButtonCalcType.number));
+                        if (conversor.value1 != null && conversor.value1 != 0) {
+                          calculator.add(ButtonCalc(
+                              value: conversor.value1.toString(),
+                              type: ButtonCalcType.number));
+                        }
                       },
                     ),
                   ],
