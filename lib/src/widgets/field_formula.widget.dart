@@ -22,12 +22,14 @@ class FieldFormulaWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return InkWell(
+      splashColor: ColorTheme.primary,
+      borderRadius: BorderRadius.circular(20),
       onTap: onTap,
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 280),
         width: double.infinity,
-        padding: const EdgeInsets.only(right: 8),
+        padding: const EdgeInsets.only(right: 16),
         decoration: selected
             ? BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
@@ -51,43 +53,50 @@ class FieldFormulaWidget extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20), boxShadow: const []),
         child: Row(
           children: [
-            Material(
-              color: Colors.transparent,
-              child: InkWell(
-                onTap: onCurrencyTap,
-                splashColor: ColorTheme.primary,
-                borderRadius: BorderRadius.circular(20),
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: currency != null ? Row(
-                    children: [
-                      Text(
-                        currency!.flag,
-                        style: const TextStyle(
-                          fontSize: 20,
-                          fontFamily: 'NotoEmoji',
-                        ),
-                        textAlign: TextAlign.right,
+            InkWell(
+              onTap: onCurrencyTap,
+              splashColor: ColorTheme.primary,
+              borderRadius: BorderRadius.circular(20),
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: currency != null
+                    ? Row(
+                        children: [
+                          Text(
+                            currency!.flag,
+                            style: const TextStyle(
+                              fontSize: 20,
+                              fontFamily: 'NotoEmoji',
+                            ),
+                            textAlign: TextAlign.right,
+                          ),
+                          const SizedBox(width: 8),
+                          Text(
+                            currency!.iso,
+                            style: const TextStyle(
+                              fontSize: 20,
+                              color: ColorTheme.dark,
+                            ),
+                            textAlign: TextAlign.right,
+                          ),
+                        ],
+                      )
+                    : const SizedBox(
+                        width: 20,
+                        height: 20,
+                        child: CircularProgressIndicator(),
                       ),
-                      const SizedBox(width: 8),
-                      Text(
-                        currency!.iso,
-                        style: const TextStyle(
-                          fontSize: 20,
-                          color: ColorTheme.dark,
-                        ),
-                        textAlign: TextAlign.right,
-                      ),
-                    ],
-                  ) : const SizedBox(width: 20, height: 20,child: CircularProgressIndicator(),),
-                ),
               ),
             ),
             Expanded(
-              child: Text(
-                value,
-                style: TextStyle(fontSize: 40, color: ColorTheme.dark),
-                textAlign: TextAlign.right,
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                reverse: value.length < 10,
+                child: Text(
+                  value,
+                  style: TextStyle(fontSize: 40, color: ColorTheme.dark),
+                  textAlign: TextAlign.right,
+                ),
               ),
             ),
           ],

@@ -9,7 +9,7 @@ import 'package:currency_converter/src/shared/utils.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
 
-class Conversor extends LsParser<Conversor>{
+class Conversor extends LsParser<Conversor> {
   Currency? fromCurrency;
   Currency? toCurrency;
   double? value1;
@@ -17,7 +17,6 @@ class Conversor extends LsParser<Conversor>{
   double? value2;
   DateTime? lastUpdate;
   DateTime? nextUpdate;
-
 
   Conversor({
     this.fromCurrency,
@@ -50,19 +49,25 @@ class Conversor extends LsParser<Conversor>{
     return roundNumberStr(value2!);
   }
 
-  Future<void> selectCurrency(Currency fromCurrency, Currency toCurrency) async {
-    final String url = 'https://v6.exchangerate-api.com/v6/42e34072e37619ccfc32f0be/pair/${toCurrency.iso}/${fromCurrency.iso}';
+  Future<void> selectNewCurrency(
+      Currency fromCurrency, Currency toCurrency) async {
+    final String url =
+        'https://v6.exchangerate-api.com/v6/42e34072e37619ccfc32f0be/pair/${toCurrency.iso}/${fromCurrency.iso}';
 
     final Response response = await http.get(Uri.parse(url));
     if (response.statusCode == 200) {
-      CurrencyConversionRequest responseObj = CurrencyConversionRequest.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+      CurrencyConversionRequest responseObj =
+          CurrencyConversionRequest.fromJson(
+              jsonDecode(response.body) as Map<String, dynamic>);
       conversionRate = responseObj.conversionRate;
       this.fromCurrency = fromCurrency;
       this.toCurrency = toCurrency;
       this
-        ..lastUpdate = DateTime.fromMillisecondsSinceEpoch(responseObj.timeLastUpdateUnix! * 1000)
-        ..nextUpdate = DateTime.fromMillisecondsSinceEpoch(responseObj.timeNextUpdateUnix! * 1000);
-    
+        ..lastUpdate = DateTime.fromMillisecondsSinceEpoch(
+            responseObj.timeLastUpdateUnix! * 1000)
+        ..nextUpdate = DateTime.fromMillisecondsSinceEpoch(
+            responseObj.timeNextUpdateUnix! * 1000);
+
       print('Conversion rate: $conversionRate');
     }
 
@@ -71,34 +76,53 @@ class Conversor extends LsParser<Conversor>{
     await CurrenciesService().saveConversorData(this);
   }
 
-  Future<void> updateFromCurrency(Currency fromCurrency) async {
-    return selectCurrency(fromCurrency, toCurrency!);
+  Future<void> setCurrency(Conversor conversor) async {
+    if(conversor.nextUpdate == null || conversor.nextUpdate!.isBefore(DateTime.now())) {
+      await selectNewCurrency(conversor.fromCurrency!, conversor.toCurrency!);
+    } else {
+      this
+        ..fromCurrency = conversor.fromCurrency
+        ..toCurrency = conversor.toCurrency
+        ..conversionRate = conversor.conversionRate
+        ..lastUpdate = conversor.lastUpdate
+        ..nextUpdate = conversor.nextUpdate;
+    }
   }
 
+  Future<void> setDefaultCurrencyValues() {
+    return selectNewCurrency(
+      Currency(iso: 'EUR', name: 'Euro', flag: '🇪🇺'),
+      Currency(iso: 'USD', name: 'Dollar', flag: '🇺🇸'),
+    );
+  }
+
+  Future<void> updateFromCurrency(Currency fromCurrency) async {
+    return selectNewCurrency(fromCurrency, toCurrency!);
+  }
 
   Future<void> updateToCurrency(Currency toCurrency) async {
-    return selectCurrency(fromCurrency!, toCurrency);
+    return selectNewCurrency(fromCurrency!, toCurrency);
   }
-  
+
   @override
   Conversor fromMap(Map<String, dynamic> map) => Conversor(
-    fromCurrency: Currency().fromMap(map["fromCurrency"]),
-    toCurrency: Currency().fromMap(map["toCurrency"]),
-    value1: map["value1"],
-    conversionRate: map["conversionRate"],
-    value2: map["value2"],
-    lastUpdate: DateTime.parse(map["lastUpdate"]),
-    nextUpdate: DateTime.parse(map["nextUpdate"]),
-  );
-  
+        fromCurrency: Currency().fromMap(map["fromCurrency"]),
+        toCurrency: Currency().fromMap(map["toCurrency"]),
+        value1: map["value1"],
+        conversionRate: map["conversionRate"],
+        value2: map["value2"],
+        lastUpdate: DateTime.parse(map["lastUpdate"]),
+        nextUpdate: DateTime.parse(map["nextUpdate"]),
+      );
+
   @override
   Map<String, dynamic> toMap() => {
-    "fromCurrency": fromCurrency!.toMap(),
-    "toCurrency": toCurrency!.toMap(),
-    "value1": value1,
-    "conversionRate": conversionRate,
-    "value2": value2,
-    "lastUpdate": lastUpdate!.toIso8601String(),
-    "nextUpdate": nextUpdate!.toIso8601String(),
-  };
+        "fromCurrency": fromCurrency!.toMap(),
+        "toCurrency": toCurrency!.toMap(),
+        "value1": value1,
+        "conversionRate": conversionRate,
+        "value2": value2,
+        "lastUpdate": lastUpdate!.toIso8601String(),
+        "nextUpdate": nextUpdate!.toIso8601String(),
+      };
 }

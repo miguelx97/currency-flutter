@@ -8,6 +8,7 @@ import 'src/settings/settings_service.dart';
 void main() async {
   // Set up the SettingsController, which will glue user settings to multiple
   // Flutter Widgets.
+  WidgetsFlutterBinding.ensureInitialized();
   final settingsController = SettingsController(SettingsService());
   
   await LocalStorageService.init();

@@ -93,6 +93,10 @@ class Calculator {
   double? getNumberToConvert() {
     if(formula.isEmpty) return 0;
     if (isThereOperator()) return null;
-    return double.parse(formula.map((e) => e.value).join());
+    try {
+      return double.parse(formula.map((e) => e.value).join());
+    } catch (e) {
+      return 0;
+    }
   }
 }

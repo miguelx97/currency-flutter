@@ -4,6 +4,7 @@ import 'package:currency_converter/src/models/conversor.dart';
 import 'package:currency_converter/src/models/currency.dart';
 import 'package:currency_converter/src/screens/currency_picker.widget.dart';
 import 'package:currency_converter/src/services/currencies.service.dart';
+import 'package:currency_converter/src/shared/colors.dart';
 import 'package:currency_converter/src/widgets/button_calc.widget.dart';
 import 'package:currency_converter/src/widgets/field_formula.widget.dart';
 import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow;
@@ -63,18 +64,18 @@ class _HomeState extends State<Home> {
   Future<void> initialCurrencies() async {
     Conversor? savedConversorData = await CurrenciesService().getConversorData();
     if (savedConversorData != null) {
-      conversor = savedConversorData;
+      conversor.setCurrency(savedConversorData);
     } else {
-      await conversor.selectCurrency(Currency(iso: 'EUR'), Currency(iso: 'USD'));
+      await conversor.setDefaultCurrencyValues();
     }
     setState(() {});
   }
 
   @override
   Widget build(BuildContext context) {
-    const Color bgColor = Color(0xFFE7ECEF);
     return Scaffold(
-      backgroundColor: bgColor,
+      backgroundColor: ColorTheme.bg,
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Center(
           child: Container(
@@ -88,10 +89,10 @@ class _HomeState extends State<Home> {
                     FieldFormulaWidget(
                       value: selectedField == 1
                           ? calculator.formulaToString()
-                          : conversor.value2.toString(),
+                          : '${conversor.value2}'.replaceFirst(RegExp(r'\.?0*$'), ''),
                       currency: conversor.fromCurrency,
                       selected: selectedField == 1,
-                      bgColor: bgColor,
+                      bgColor: ColorTheme.bg,
                       onTap: () {
                         if (selectedField == 1) return;
                         setState(() {
@@ -111,10 +112,10 @@ class _HomeState extends State<Home> {
                     FieldFormulaWidget(
                       value: selectedField == 2
                           ? calculator.formulaToString()
-                          : conversor.value1.toString(),
+                          : conversor.value1.toString().replaceFirst(RegExp(r'\.?0*$'), ''),
                       currency: conversor.toCurrency,
                       selected: selectedField == 2,
-                      bgColor: bgColor,
+                      bgColor: ColorTheme.bg,
                       onTap: () {
                         if (selectedField == 2) return;
                         setState(() {
@@ -141,7 +142,7 @@ class _HomeState extends State<Home> {
                     // Generate 100 widgets that display their index in the List.
                     children: List.generate(buttons.length, (index) {
                       return ButtonCalcWidget(
-                        bgColor: bgColor,
+                        bgColor: ColorTheme.bg,
                         btn: buttons[index],
                         func: updateFormula,
                       );
