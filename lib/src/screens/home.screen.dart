@@ -1,6 +1,9 @@
 import 'package:currency_converter/src/models/button_calc.dart';
 import 'package:currency_converter/src/models/calculator.dart';
 import 'package:currency_converter/src/models/conversor.dart';
+import 'package:currency_converter/src/models/currency.dart';
+import 'package:currency_converter/src/screens/currency_picker.widget.dart';
+import 'package:currency_converter/src/services/currencies.service.dart';
 import 'package:currency_converter/src/widgets/button_calc.widget.dart';
 import 'package:currency_converter/src/widgets/field_formula.widget.dart';
 import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow;
@@ -23,14 +26,48 @@ class _HomeState extends State<Home> {
   updateFormula(ButtonCalc btn) {
     HapticFeedback.lightImpact();
     setState(() {
-      calculator.add(btn, onButtonAdded: () => conversor.convert(calculator, reverse: selectedField == 1));
+      calculator.add(btn,
+          onButtonAdded: () =>
+              conversor.convert(calculator, reverse: selectedField == 1));
     });
+  }
+
+  selectCurrency(int filed) async {
+    Currency? currency = await showModalBottomSheet(
+      barrierColor: Colors.black.withOpacity(.1),
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(16.0)),
+      ),
+      context: context,
+      isScrollControlled: true,
+      builder: (BuildContext context) {
+        return const CurrencyPickerSheet();
+      },
+    );
+    if (currency == null) return;
+
+    if (filed == 1) {
+      await conversor.updateFromCurrency(currency);
+    } else {
+      await conversor.updateToCurrency(currency);
+    }
+    setState(() {});
   }
 
   @override
   void initState() {
     super.initState();
-    conversor.selectCurrency('EUR', 'THB');
+    initialCurrencies();
+  }
+
+  Future<void> initialCurrencies() async {
+    Conversor? savedConversorData = await CurrenciesService().getConversorData();
+    if (savedConversorData != null) {
+      conversor = savedConversorData;
+    } else {
+      await conversor.selectCurrency(Currency(iso: 'EUR'), Currency(iso: 'USD'));
+    }
+    setState(() {});
   }
 
   @override
@@ -52,7 +89,7 @@ class _HomeState extends State<Home> {
                       value: selectedField == 1
                           ? calculator.formulaToString()
                           : conversor.value2.toString(),
-                      currency: 'EUR',
+                      currency: conversor.fromCurrency,
                       selected: selectedField == 1,
                       bgColor: bgColor,
                       onTap: () {
@@ -69,12 +106,13 @@ class _HomeState extends State<Home> {
                               type: ButtonCalcType.number));
                         }
                       },
+                      onCurrencyTap: () => selectCurrency(1),
                     ),
                     FieldFormulaWidget(
                       value: selectedField == 2
                           ? calculator.formulaToString()
                           : conversor.value1.toString(),
-                      currency: 'BAHT',
+                      currency: conversor.toCurrency,
                       selected: selectedField == 2,
                       bgColor: bgColor,
                       onTap: () {
@@ -90,6 +128,7 @@ class _HomeState extends State<Home> {
                               type: ButtonCalcType.number));
                         }
                       },
+                      onCurrencyTap: ()=> selectCurrency(2),
                     ),
                   ],
                 ),

@@ -1,3 +1,4 @@
+import 'package:currency_converter/src/services/lib/services/local_storage.service.dart';
 import 'package:flutter/material.dart';
 
 import 'src/app.dart';
@@ -8,6 +9,8 @@ void main() async {
   // Set up the SettingsController, which will glue user settings to multiple
   // Flutter Widgets.
   final settingsController = SettingsController(SettingsService());
+  
+  await LocalStorageService.init();
 
   // Load the user's preferred theme while the splash screen is displayed.
   // This prevents a sudden theme change when the app is first displayed.

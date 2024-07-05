@@ -59,6 +59,10 @@ class Calculator {
     }
   }
 
+  deleteAll() {
+    formula.clear();
+  }
+
   calculate({Function? onCalculate}) {
     String expression = formulaToString();
     expression = expression.replaceAll('x', '*');
@@ -87,7 +91,8 @@ class Calculator {
   }
 
   double? getNumberToConvert() {
-    if (formula.isEmpty || isThereOperator()) return null;
+    if(formula.isEmpty) return 0;
+    if (isThereOperator()) return null;
     return double.parse(formula.map((e) => e.value).join());
   }
 }
