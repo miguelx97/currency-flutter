@@ -96,12 +96,18 @@ class Conversor extends LsParser<Conversor> {
     );
   }
 
-  Future<void> updateFromCurrency(Currency fromCurrency) async {
-    return selectNewCurrency(fromCurrency, toCurrency!);
+  Future<void> updateFromCurrency(Currency newFromCurrency) async {
+    if(newFromCurrency.iso == toCurrency!.iso) {
+      return selectNewCurrency(newFromCurrency, fromCurrency!);
+    }
+    return selectNewCurrency(newFromCurrency, toCurrency!);
   }
 
-  Future<void> updateToCurrency(Currency toCurrency) async {
-    return selectNewCurrency(fromCurrency!, toCurrency);
+  Future<void> updateToCurrency(Currency newToCurrency) async {
+    if(newToCurrency.iso == fromCurrency!.iso) {
+      return selectNewCurrency(toCurrency!, newToCurrency);
+    }
+    return selectNewCurrency(fromCurrency!, newToCurrency);
   }
 
   @override

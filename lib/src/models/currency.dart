@@ -8,6 +8,7 @@ class Currency extends LsParser<Currency> {
     String flag;
     String position;
     bool isFavorite;
+    bool updating;
 
     Currency({
         this.name = '',
@@ -17,6 +18,7 @@ class Currency extends LsParser<Currency> {
         this.flag = '',
         this.position = '',
         this.isFavorite = false,
+        this.updating = false,
     });
     
       @override

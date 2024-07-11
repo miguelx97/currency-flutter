@@ -59,7 +59,7 @@ class FieldFormulaWidget extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
-                child: currency != null
+                child: currency != null && !currency!.updating
                     ? Row(
                         children: [
                           Text(

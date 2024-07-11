@@ -48,10 +48,17 @@ class _HomeState extends State<Home> {
     if (currency == null) return;
 
     if (filed == 1) {
+      conversor.fromCurrency!.updating = true;
+      setState(() {});
       await conversor.updateFromCurrency(currency);
     } else {
+      conversor.toCurrency!.updating = true;
+      setState(() {});
       await conversor.updateToCurrency(currency);
     }
+    conversor.fromCurrency!.updating = false;
+    conversor.toCurrency!.updating = false;
+    conversor.convert(calculator, reverse: selectedField == 1);
     setState(() {});
   }
 
