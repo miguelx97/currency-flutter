@@ -11,13 +11,11 @@ class Calculator {
     }
     switch (btn.type) {
       case ButtonCalcType.operator:
-        if (formula.isEmpty || formula.last.type == ButtonCalcType.operator) {
-          return;
-        }
-        calculate(onCalculate: onButtonAdded);
-        if (formula.last.type == ButtonCalcType.operator) {
+        if (formula.isEmpty) return;
+        if (isLastOperator() && btn.value != '-') {
           formula.removeLast();
         }
+        if(isThereOperator() && !isLastOperator()) calculate(onCalculate: onButtonAdded);
         formula.add(btn);
         break;
       case ButtonCalcType.number:
@@ -43,6 +41,10 @@ class Calculator {
 
   isThereOperator() {
     return formula.any((element) => element.type == ButtonCalcType.operator);
+  }
+
+  isLastOperator() {
+    return formula.isNotEmpty && formula.last.type == ButtonCalcType.operator;
   }
 
   replaceLastNumber(String value) {
@@ -92,9 +94,14 @@ class Calculator {
 
   double? getNumberToConvert() {
     if(formula.isEmpty) return 0;
-    if (isThereOperator()) return null;
+    List<ButtonCalc> formulaAux = List.from(formula);
+    if (formulaAux.last.type == ButtonCalcType.operator) {
+      formulaAux.removeLast();
+    }
+    bool isThereOperator = formulaAux.any((element) => element.type == ButtonCalcType.operator);
+    if(isThereOperator) return null;
     try {
-      return double.parse(formula.map((e) => e.value).join());
+      return double.parse(formulaAux.map((e) => e.value).join());
     } catch (e) {
       return 0;
     }

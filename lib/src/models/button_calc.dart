@@ -63,6 +63,7 @@ getButtons() {
         value: '+/-',
         type: ButtonCalcType.function,
         func: (calc) {
+          if(calc.formula.isEmpty || calc.isLastOperator() == ButtonCalcType.operator) return;
           String lastValue = calc.formula.last.value;
           if (lastValue.startsWith('-')) {
             calc.replaceLastNumber(lastValue.substring(1));

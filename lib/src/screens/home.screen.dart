@@ -119,7 +119,7 @@ class _HomeState extends State<Home> {
                     FieldFormulaWidget(
                       value: selectedField == 2
                           ? calculator.formulaToString()
-                          : conversor.value1.toString().replaceFirst(RegExp(r'\.?0*$'), ''),
+                          : conversor.value1.toString().replaceFirst(RegExp(r'\\.?0*$'), ''),
                       currency: conversor.toCurrency,
                       selected: selectedField == 2,
                       bgColor: ColorTheme.bg,
