@@ -29,7 +29,7 @@ class FieldFormulaWidget extends StatelessWidget {
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 280),
         width: double.infinity,
-        padding: const EdgeInsets.only(right: 16),
+        padding: const EdgeInsets.only(right: 16, top: 2, bottom: 2),
         decoration: selected
             ? BoxDecoration(
                 borderRadius: BorderRadius.circular(20),

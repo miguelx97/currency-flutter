@@ -13,6 +13,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_inset_box_shadow: ^1.0.8
+  flutter_launcher_icons: ^0.13.1
   flutter_localizations:
     sdk: flutter
   function_tree: ^0.9.1
