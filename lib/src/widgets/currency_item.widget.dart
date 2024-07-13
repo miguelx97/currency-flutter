@@ -1,4 +1,4 @@
-import 'package:currency_converter/src/models/currency.dart';
+import 'package:currencii/src/models/currency.dart';
 import 'package:flutter/material.dart';
 
 class CurrencyItem extends StatelessWidget {

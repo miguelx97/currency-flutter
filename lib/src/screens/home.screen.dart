@@ -1,12 +1,12 @@
-import 'package:currency_converter/src/models/button_calc.dart';
-import 'package:currency_converter/src/models/calculator.dart';
-import 'package:currency_converter/src/models/conversor.dart';
-import 'package:currency_converter/src/models/currency.dart';
-import 'package:currency_converter/src/screens/currency_picker.widget.dart';
-import 'package:currency_converter/src/services/currencies.service.dart';
-import 'package:currency_converter/src/shared/colors.dart';
-import 'package:currency_converter/src/widgets/button_calc.widget.dart';
-import 'package:currency_converter/src/widgets/field_formula.widget.dart';
+import 'package:currencii/src/models/button_calc.dart';
+import 'package:currencii/src/models/calculator.dart';
+import 'package:currencii/src/models/conversor.dart';
+import 'package:currencii/src/models/currency.dart';
+import 'package:currencii/src/screens/currency_picker.widget.dart';
+import 'package:currencii/src/services/currencies.service.dart';
+import 'package:currencii/src/shared/colors.dart';
+import 'package:currencii/src/widgets/button_calc.widget.dart';
+import 'package:currencii/src/widgets/field_formula.widget.dart';
 import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow;
 import 'package:flutter/services.dart';
 

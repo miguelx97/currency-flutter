@@ -1,6 +1,6 @@
-import 'package:currency_converter/src/models/calculator.dart';
-import 'package:currency_converter/src/shared/colors.dart';
-import 'package:currency_converter/src/shared/utils.dart';
+import 'package:currencii/src/models/calculator.dart';
+import 'package:currencii/src/shared/colors.dart';
+import 'package:currencii/src/shared/utils.dart';
 import 'package:flutter/material.dart';
 
 class ButtonCalc {

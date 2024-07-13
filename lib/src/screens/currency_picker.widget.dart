@@ -1,6 +1,6 @@
-import 'package:currency_converter/src/models/currency.dart';
-import 'package:currency_converter/src/services/currencies.service.dart';
-import 'package:currency_converter/src/widgets/currency_item.widget.dart';
+import 'package:currencii/src/models/currency.dart';
+import 'package:currencii/src/services/currencies.service.dart';
+import 'package:currencii/src/widgets/currency_item.widget.dart';
 import 'package:flutter/material.dart';
 
 class CurrencyPickerSheet extends StatefulWidget {
@@ -52,6 +52,9 @@ class _CurrencyPickerSheetState extends State<CurrencyPickerSheet> {
   selectCurrency(Currency currency) {
     Navigator.of(context).pop(currency);
   }
+  
+
+  final TextEditingController _searchController = TextEditingController();
 
   void searchCurrency(String query) {
     setState(() {
@@ -67,6 +70,7 @@ class _CurrencyPickerSheetState extends State<CurrencyPickerSheet> {
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.sizeOf(context).height;
 
+    _searchController.addListener(() => searchCurrency(_searchController.text));
     return Container(
       height: screenHeight * .7,
       decoration: const BoxDecoration(
@@ -78,11 +82,15 @@ class _CurrencyPickerSheetState extends State<CurrencyPickerSheet> {
           children: [
             //searcher
             TextField(
-              decoration: const InputDecoration(
+              decoration: InputDecoration(
                 hintText: 'Search',
                 prefixIcon: Icon(Icons.search),
+                suffixIcon: IconButton(
+                  icon: Icon(Icons.clear),
+                  onPressed: _searchController.clear,
+                ),
               ),
-              onChanged: searchCurrency,
+              controller: _searchController,
             ),
             Expanded(
               child: ListView.builder(

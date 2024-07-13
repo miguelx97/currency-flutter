@@ -1,5 +1,5 @@
-import 'package:currency_converter/src/models/button_calc.dart';
-import 'package:currency_converter/src/shared/utils.dart';
+import 'package:currencii/src/models/button_calc.dart';
+import 'package:currencii/src/shared/utils.dart';
 import 'package:function_tree/function_tree.dart';
 
 class Calculator {

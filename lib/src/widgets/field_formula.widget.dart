@@ -1,5 +1,5 @@
-import 'package:currency_converter/src/models/currency.dart';
-import 'package:currency_converter/src/shared/colors.dart';
+import 'package:currencii/src/models/currency.dart';
+import 'package:currencii/src/shared/colors.dart';
 import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow;
 import 'package:flutter/services.dart';
 import 'package:flutter_inset_box_shadow/flutter_inset_box_shadow.dart';

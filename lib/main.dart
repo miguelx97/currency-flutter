@@ -1,4 +1,4 @@
-import 'package:currency_converter/src/services/lib/services/local_storage.service.dart';
+import 'package:currencii/src/services/lib/services/local_storage.service.dart';
 import 'package:flutter/material.dart';
 
 import 'src/app.dart';

@@ -1,11 +1,11 @@
 import 'dart:convert';
 
-import 'package:currency_converter/src/models/calculator.dart';
-import 'package:currency_converter/src/models/currency.dart';
-import 'package:currency_converter/src/models/currency_conversion_request.dart';
-import 'package:currency_converter/src/services/currencies.service.dart';
-import 'package:currency_converter/src/services/lib/services/local_storage.service.dart';
-import 'package:currency_converter/src/shared/utils.dart';
+import 'package:currencii/src/models/calculator.dart';
+import 'package:currencii/src/models/currency.dart';
+import 'package:currencii/src/models/currency_conversion_request.dart';
+import 'package:currencii/src/services/currencies.service.dart';
+import 'package:currencii/src/services/lib/services/local_storage.service.dart';
+import 'package:currencii/src/shared/utils.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
 

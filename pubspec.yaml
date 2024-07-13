@@ -1,5 +1,5 @@
-name: currency_converter
-description: A new Flutter project.
+name: currencii
+description: Currency Converter 4 Travelers
 
 # Prevent accidental publishing to pub.dev.
 publish_to: 'none'

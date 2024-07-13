@@ -1,7 +1,7 @@
 import 'dart:convert';
-import 'package:currency_converter/src/models/conversor.dart';
-import 'package:currency_converter/src/models/currency.dart';
-import 'package:currency_converter/src/services/lib/services/local_storage.service.dart';
+import 'package:currencii/src/models/conversor.dart';
+import 'package:currencii/src/models/currency.dart';
+import 'package:currencii/src/services/lib/services/local_storage.service.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
 class CurrenciesService {
