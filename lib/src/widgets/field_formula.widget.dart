@@ -1,6 +1,7 @@
 import 'package:currency_converter/src/models/currency.dart';
 import 'package:currency_converter/src/shared/colors.dart';
 import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow;
+import 'package:flutter/services.dart';
 import 'package:flutter_inset_box_shadow/flutter_inset_box_shadow.dart';
 
 class FieldFormulaWidget extends StatelessWidget {
@@ -20,12 +21,17 @@ class FieldFormulaWidget extends StatelessWidget {
   final Function() onTap;
   final Function() onCurrencyTap;
 
+  void copyValue() {
+    Clipboard.setData(ClipboardData(text: value));
+  }
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
       splashColor: ColorTheme.primary,
       borderRadius: BorderRadius.circular(20),
       onTap: onTap,
+      onLongPress: copyValue,
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 280),
         width: double.infinity,

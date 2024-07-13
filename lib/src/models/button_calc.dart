@@ -29,7 +29,7 @@ getButtons() {
       },
     ),
     ButtonCalc(
-      value: 'DEL',
+      value: '⌫',
       type: ButtonCalcType.function,
       bgColor: ColorTheme.primary,
       func: (Calculator calc) {

@@ -71,7 +71,7 @@ class _HomeState extends State<Home> {
   Future<void> initialCurrencies() async {
     Conversor? savedConversorData = await CurrenciesService().getConversorData();
     if (savedConversorData != null) {
-      conversor.setCurrency(savedConversorData);
+      await conversor.setCurrency(savedConversorData);
     } else {
       await conversor.setDefaultCurrencyValues();
     }
