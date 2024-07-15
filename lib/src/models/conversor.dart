@@ -89,8 +89,8 @@ class Conversor extends LsParser<Conversor> {
 
   Future<void> setDefaultCurrencyValues() {
     return selectNewCurrency(
-      Currency(iso: 'EUR', name: 'Euro', flag: '🇪🇺'),
       Currency(iso: 'USD', name: 'Dollar', flag: '🇺🇸'),
+      Currency(iso: 'EUR', name: 'Euro', flag: '🇪🇺'),
     );
   }
 

@@ -15,6 +15,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  
   final settingsController = SettingsController(SettingsService());
   
   await LocalStorageService.init();

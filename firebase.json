@@ -1,1 +1,31 @@
-{"flutter":{"platforms":{"android":{"default":{"projectId":"currencii-app","appId":"1:740788789159:android:93c3c9c4cf062c63c5e082","fileOutput":"android/app/google-services.json"}},"ios":{"default":{"projectId":"currencii-app","appId":"1:740788789159:ios:aef6ba837de63f7ec5e082","uploadDebugSymbols":false,"fileOutput":"ios/Runner/GoogleService-Info.plist"}},"dart":{"lib/firebase_options.dart":{"projectId":"currencii-app","configurations":{"android":"1:740788789159:android:93c3c9c4cf062c63c5e082","ios":"1:740788789159:ios:aef6ba837de63f7ec5e082","web":"1:740788789159:web:3e4f75733c10d934c5e082"}}}}}}
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "currencii-app",
+          "appId": "1:740788789159:android:93c3c9c4cf062c63c5e082",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "ios": {
+        "default": {
+          "projectId": "currencii-app",
+          "appId": "1:740788789159:ios:aef6ba837de63f7ec5e082",
+          "uploadDebugSymbols": false,
+          "fileOutput": "ios/Runner/GoogleService-Info.plist"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "currencii-app",
+          "configurations": {
+            "android": "1:740788789159:android:93c3c9c4cf062c63c5e082",
+            "ios": "1:740788789159:ios:aef6ba837de63f7ec5e082",
+            "web": "1:740788789159:web:3e4f75733c10d934c5e082"
+          }
+        }
+      }
+    }
+  }
+}
