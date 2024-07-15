@@ -1,10 +1,11 @@
 import 'package:currencii/src/models/button_calc.dart';
-import 'package:currencii/src/models/calculator.dart';
+import 'package:currencii/src/models/calculator2.dart';
 import 'package:currencii/src/models/conversor.dart';
 import 'package:currencii/src/models/currency.dart';
 import 'package:currencii/src/screens/currency_picker.widget.dart';
 import 'package:currencii/src/services/currencies.service.dart';
 import 'package:currencii/src/shared/colors.dart';
+import 'package:currencii/src/shared/utils.dart';
 import 'package:currencii/src/widgets/button_calc.widget.dart';
 import 'package:currencii/src/widgets/field_formula.widget.dart';
 import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow;
@@ -24,12 +25,16 @@ class _HomeState extends State<Home> {
   int selectedField = 1;
   Conversor conversor = Conversor();
 
+  onButtonAdded() {
+    conversor.convert(calculator, reverse: selectedField == 1);
+    //print('v1 ${conversor.value1} - v2 ${conversor.value2}');
+  }
+
   updateFormula(ButtonCalc btn) {
     HapticFeedback.lightImpact();
     setState(() {
       calculator.add(btn,
-          onButtonAdded: () =>
-              conversor.convert(calculator, reverse: selectedField == 1));
+          onButtonAdded: onButtonAdded);
     });
   }
 
@@ -95,46 +100,39 @@ class _HomeState extends State<Home> {
                   children: [
                     FieldFormulaWidget(
                       value: selectedField == 1
-                          ? calculator.formulaToString()
-                          : '${conversor.value2}'.replaceFirst(RegExp(r'\.?0*$'), ''),
+                          ? calculator.formatedExpression
+                          : format(conversor.value2),
                       currency: conversor.fromCurrency,
                       selected: selectedField == 1,
                       bgColor: ColorTheme.bg,
                       onTap: () {
                         if (selectedField == 1) return;
-                        setState(() {
-                          selectedField = 1;
-                        });
-
-                        calculator.formula.clear();
+                        selectedField = 1;
 
                         if (conversor.value2 != null && conversor.value2 != 0) {
-                          calculator.add(ButtonCalc(
-                              value: conversor.value2.toString(),
-                              type: ButtonCalcType.number));
+                          calculator.setValue(conversor.value2);
                         }
+
+                        setState(() {});
                       },
                       onCurrencyTap: () => selectCurrency(1),
                     ),
                     FieldFormulaWidget(
                       value: selectedField == 2
-                          ? calculator.formulaToString()
-                          : conversor.value1.toString().replaceFirst(RegExp(r'\.?0*$'), ''),
+                          ? calculator.formatedExpression
+                          : format(conversor.value1),
                       currency: conversor.toCurrency,
                       selected: selectedField == 2,
                       bgColor: ColorTheme.bg,
                       onTap: () {
                         if (selectedField == 2) return;
-                        setState(() {
-                          selectedField = 2;
-                        });
+                        selectedField = 2;
 
-                        calculator.formula.clear();
                         if (conversor.value1 != null && conversor.value1 != 0) {
-                          calculator.add(ButtonCalc(
-                              value: conversor.value1.toString(),
-                              type: ButtonCalcType.number));
+                          calculator.setValue(conversor.value1);
                         }
+
+                        setState(() {});
                       },
                       onCurrencyTap: ()=> selectCurrency(2),
                     ),

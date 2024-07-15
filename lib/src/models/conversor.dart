@@ -1,13 +1,11 @@
 import 'dart:convert';
 
-import 'package:currencii/src/models/calculator.dart';
+import 'package:currencii/src/models/calculator2.dart';
 import 'package:currencii/src/models/currency.dart';
 import 'package:currencii/src/models/currency_conversion_request.dart';
 import 'package:currencii/src/services/currencies.service.dart';
 import 'package:currencii/src/services/lib/services/local_storage.service.dart';
-import 'package:currencii/src/shared/utils.dart';
 import 'package:http/http.dart' as http;
-import 'package:http/http.dart';
 
 class Conversor extends LsParser<Conversor> {
   Currency? fromCurrency;
@@ -28,25 +26,25 @@ class Conversor extends LsParser<Conversor> {
     this.nextUpdate,
   });
 
-  String convert(Calculator calc, {bool reverse = false}) {
-    double? number = calc.getNumberToConvert();
+  double convert(Calculator calc, {bool reverse = false}) {
+    double? number = calc.firstNumber;
     return reverse ? reverseConvert(number) : directConvert(number);
   }
 
-  directConvert(double? number) {
+  double directConvert(double? number) {
     if (number != null) {
       value1 = number;
-      value2 = roundNumber(value1! * conversionRate!);
+      value2 = value1! * conversionRate!;
     }
-    return roundNumberStr(value2!);
+    return value2!;
   }
 
-  reverseConvert(double? number) {
+  double reverseConvert(double? number) {
     if (number != null) {
       value2 = number;
-      value1 = roundNumber(value2! / conversionRate!);
+      value1 = value2! / conversionRate!;
     }
-    return roundNumberStr(value2!);
+    return value2!;
   }
 
   Future<void> selectNewCurrency(
@@ -54,7 +52,7 @@ class Conversor extends LsParser<Conversor> {
     final String url =
         'https://v6.exchangerate-api.com/v6/42e34072e37619ccfc32f0be/pair/${toCurrency.iso}/${fromCurrency.iso}';
 
-    final Response response = await http.get(Uri.parse(url));
+    final http.Response response = await http.get(Uri.parse(url));
     if (response.statusCode == 200) {
       CurrencyConversionRequest responseObj =
           CurrencyConversionRequest.fromJson(

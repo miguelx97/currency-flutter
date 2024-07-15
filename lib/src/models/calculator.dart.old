@@ -2,7 +2,7 @@ import 'package:currencii/src/models/button_calc.dart';
 import 'package:currencii/src/shared/utils.dart';
 import 'package:function_tree/function_tree.dart';
 
-class Calculator {
+class CalculatorOld {
   List<ButtonCalc> formula = [];
 
   add(ButtonCalc btn, {Function? onButtonAdded}) {

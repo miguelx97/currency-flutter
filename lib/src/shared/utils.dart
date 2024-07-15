@@ -1,7 +1,10 @@
-String roundNumberStr(double d) =>
-    // toStringAsFixed guarantees the specified number of fractional
-    // digits, so the regular expression is simpler than it would need to
-    // be for more general cases.
-    d.toStringAsFixed(4).replaceFirst(RegExp(r'\.?0*$'), '');
+import 'package:intl/intl.dart';
 
-double roundNumber(double d) => double.parse(roundNumberStr(d));
+  String format(double? value) {
+    if (value == null) return '0';
+    NumberFormat formatter = NumberFormat.decimalPatternDigits(
+        locale: 'en_us',
+        decimalDigits: 2,
+    );
+    return formatter.format(value).replaceFirst(RegExp(r'\.?0*$'), '');
+  }

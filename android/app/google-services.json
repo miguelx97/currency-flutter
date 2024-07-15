@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:740788789159:android:93c3c9c4cf062c63c5e082",
         "android_client_info": {
-          "package_name": "com.example.currency_converter"
+          "package_name": "com.miguelmartin.currencii"
         }
       },
       "oauth_client": [],

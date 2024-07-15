@@ -83,10 +83,10 @@ class _CurrencyPickerSheetState extends State<CurrencyPickerSheet> {
             //searcher
             TextField(
               decoration: InputDecoration(
-                hintText: 'Search',
-                prefixIcon: Icon(Icons.search),
+                hintText: 'Search currency',
+                prefixIcon: const Icon(Icons.search),
                 suffixIcon: IconButton(
-                  icon: Icon(Icons.clear),
+                  icon: const Icon(Icons.clear),
                   onPressed: _searchController.clear,
                 ),
               ),

@@ -1,4 +1,4 @@
-import 'package:currencii/src/models/calculator.dart';
+import 'package:currencii/src/models/calculator2.dart';
 import 'package:currencii/src/shared/colors.dart';
 import 'package:currencii/src/shared/utils.dart';
 import 'package:flutter/material.dart';
@@ -38,13 +38,8 @@ getButtons() {
     ),
     ButtonCalc(
       value: '%',
-      type: ButtonCalcType.function,
+      type: ButtonCalcType.number,
       bgColor: ColorTheme.primary,
-      func: (calc) {
-        String lastValue = calc.formula.last.value;
-        lastValue = roundNumberStr(double.parse(lastValue) / 100);
-        calc.replaceLastNumber(lastValue);
-      },
     ),
     ButtonCalc(value: '/', type: ButtonCalcType.operator, bgColor: ColorTheme.primary),
     ButtonCalc(value: '7', type: ButtonCalcType.number),
@@ -61,16 +56,8 @@ getButtons() {
     ButtonCalc(value: '+', type: ButtonCalcType.operator, bgColor: ColorTheme.primary),
     ButtonCalc(
         value: '+/-',
-        type: ButtonCalcType.function,
-        func: (calc) {
-          if(calc.formula.isEmpty || calc.isLastOperator() == ButtonCalcType.operator) return;
-          String lastValue = calc.formula.last.value;
-          if (lastValue.startsWith('-')) {
-            calc.replaceLastNumber(lastValue.substring(1));
-          } else {
-            calc.replaceLastNumber('-$lastValue');
-          }
-        }),
+        type: ButtonCalcType.function
+    ),
     ButtonCalc(value: '0', type: ButtonCalcType.number),
     ButtonCalc(value: '.', type: ButtonCalcType.number),
     ButtonCalc(
@@ -89,5 +76,4 @@ enum ButtonCalcType {
   number,
   operator,
   function,
-  error
 }
