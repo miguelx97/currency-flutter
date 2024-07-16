@@ -1,6 +1,4 @@
 import 'package:currencii/src/models/calculator2.dart';
-import 'package:currencii/src/shared/colors.dart';
-import 'package:currencii/src/shared/utils.dart';
 import 'package:flutter/material.dart';
 
 class ButtonCalc {
@@ -17,12 +15,13 @@ class ButtonCalc {
   });
 }
 
-getButtons() {
+getButtons(BuildContext context) {
+  final ThemeData theme = Theme.of(context);
   return [
     ButtonCalc(
       value: 'C',
       type: ButtonCalcType.function,
-      bgColor: ColorTheme.primary,
+      bgColor: theme.primaryColor,
       func: (Calculator calc) {
         calc.deleteAll();
 
@@ -31,7 +30,7 @@ getButtons() {
     ButtonCalc(
       value: '⌫',
       type: ButtonCalcType.function,
-      bgColor: ColorTheme.primary,
+      bgColor: theme.primaryColor,
       func: (Calculator calc) {
         calc.delete();
       },
@@ -39,21 +38,21 @@ getButtons() {
     ButtonCalc(
       value: '%',
       type: ButtonCalcType.number,
-      bgColor: ColorTheme.primary,
+      bgColor: theme.primaryColor,
     ),
-    ButtonCalc(value: '/', type: ButtonCalcType.operator, bgColor: ColorTheme.primary),
+    ButtonCalc(value: '/', type: ButtonCalcType.operator, bgColor: theme.primaryColor),
     ButtonCalc(value: '7', type: ButtonCalcType.number),
     ButtonCalc(value: '8', type: ButtonCalcType.number),
     ButtonCalc(value: '9', type: ButtonCalcType.number),
-    ButtonCalc(value: 'x', type: ButtonCalcType.operator, bgColor: ColorTheme.primary),
+    ButtonCalc(value: 'x', type: ButtonCalcType.operator, bgColor: theme.primaryColor),
     ButtonCalc(value: '4', type: ButtonCalcType.number),
     ButtonCalc(value: '5', type: ButtonCalcType.number),
     ButtonCalc(value: '6', type: ButtonCalcType.number),
-    ButtonCalc(value: '-', type: ButtonCalcType.operator, bgColor: ColorTheme.primary),
+    ButtonCalc(value: '-', type: ButtonCalcType.operator, bgColor: theme.primaryColor),
     ButtonCalc(value: '1', type: ButtonCalcType.number),
     ButtonCalc(value: '2', type: ButtonCalcType.number),
     ButtonCalc(value: '3', type: ButtonCalcType.number),
-    ButtonCalc(value: '+', type: ButtonCalcType.operator, bgColor: ColorTheme.primary),
+    ButtonCalc(value: '+', type: ButtonCalcType.operator, bgColor: theme.primaryColor),
     ButtonCalc(
         value: '+/-',
         type: ButtonCalcType.function
@@ -63,7 +62,7 @@ getButtons() {
     ButtonCalc(
       value: '=',
       type: ButtonCalcType.function,
-      bgColor: ColorTheme.primaryDark,
+      bgColor: theme.primaryColorDark,
       func: (calc) {
         calc.calculate();
       },

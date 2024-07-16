@@ -4,7 +4,6 @@ import 'package:currencii/src/models/conversor.dart';
 import 'package:currencii/src/models/currency.dart';
 import 'package:currencii/src/screens/currency_picker.widget.dart';
 import 'package:currencii/src/services/currencies.service.dart';
-import 'package:currencii/src/shared/colors.dart';
 import 'package:currencii/src/shared/utils.dart';
 import 'package:currencii/src/widgets/button_calc.widget.dart';
 import 'package:currencii/src/widgets/field_formula.widget.dart';
@@ -21,7 +20,6 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   Calculator calculator = Calculator();
-  List<ButtonCalc> buttons = getButtons();
   int selectedField = 1;
   Conversor conversor = Conversor();
 
@@ -85,8 +83,10 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
+    final Color bgColor = Theme.of(context).colorScheme.background;
+    final List<ButtonCalc> buttons = getButtons(context);
     return Scaffold(
-      backgroundColor: ColorTheme.bg,
+      backgroundColor: bgColor,
       resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Center(
@@ -104,7 +104,7 @@ class _HomeState extends State<Home> {
                           : format(conversor.value2),
                       currency: conversor.fromCurrency,
                       selected: selectedField == 1,
-                      bgColor: ColorTheme.bg,
+                      bgColor: bgColor,
                       onTap: () {
                         if (selectedField == 1) return;
                         selectedField = 1;
@@ -123,7 +123,7 @@ class _HomeState extends State<Home> {
                           : format(conversor.value1),
                       currency: conversor.toCurrency,
                       selected: selectedField == 2,
-                      bgColor: ColorTheme.bg,
+                      bgColor: bgColor,
                       onTap: () {
                         if (selectedField == 2) return;
                         selectedField = 2;
@@ -147,7 +147,7 @@ class _HomeState extends State<Home> {
                     // Generate 100 widgets that display their index in the List.
                     children: List.generate(buttons.length, (index) {
                       return ButtonCalcWidget(
-                        bgColor: ColorTheme.bg,
+                        bgColor: bgColor,
                         btn: buttons[index],
                         func: updateFormula,
                       );

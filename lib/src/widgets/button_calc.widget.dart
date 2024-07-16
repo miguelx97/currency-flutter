@@ -1,5 +1,4 @@
 import 'package:currencii/src/models/button_calc.dart';
-import 'package:currencii/src/shared/colors.dart';
 import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow;
 import 'package:flutter_inset_box_shadow/flutter_inset_box_shadow.dart';
 
@@ -19,6 +18,7 @@ class _ButtonCalcWidgetState extends State<ButtonCalcWidget> {
   Widget build(BuildContext context) {
     Offset shadowDistance = isPressed ? const Offset(1, 1) : const Offset(2, 2);
     double blur = isPressed ? 2.0 : 4.0;
+    ColorScheme colorScheme = Theme.of(context).colorScheme;
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Listener(
@@ -35,13 +35,13 @@ class _ButtonCalcWidgetState extends State<ButtonCalcWidget> {
               boxShadow: [
                 BoxShadow(
                   offset: -shadowDistance,
-                  color: Colors.white,
+                  color: colorScheme.surface,
                   blurRadius: blur,
                   inset: isPressed,
                 ),
                 BoxShadow(
                   offset: shadowDistance,
-                  color: Colors.black38,
+                  color: colorScheme.surfaceVariant,
                   blurRadius: blur,
                   inset: isPressed,
                 )
@@ -49,7 +49,7 @@ class _ButtonCalcWidgetState extends State<ButtonCalcWidget> {
           child: Center(
             child: Text(
               widget.btn.value,
-              style: TextStyle(fontSize: 32, color: widget.btn.bgColor == null ? ColorTheme.dark : Colors.white),
+              style: TextStyle(fontSize: 32, color: widget.btn.bgColor == null ? colorScheme.tertiary : Colors.white),
             ),
           ),
         ),

@@ -1,5 +1,4 @@
 import 'package:currencii/src/models/currency.dart';
-import 'package:currencii/src/shared/colors.dart';
 import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow;
 import 'package:flutter/services.dart';
 import 'package:flutter_inset_box_shadow/flutter_inset_box_shadow.dart';
@@ -27,8 +26,9 @@ class FieldFormulaWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ThemeData theme = Theme.of(context);
     return InkWell(
-      splashColor: ColorTheme.primary,
+      splashColor: theme.primaryColor,
       borderRadius: BorderRadius.circular(20),
       onTap: onTap,
       onLongPress: copyValue,
@@ -40,17 +40,17 @@ class FieldFormulaWidget extends StatelessWidget {
             ? BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
                 color: bgColor,
-                boxShadow: const [
+                boxShadow: [
                   BoxShadow(
-                    offset: Offset(-2, -2),
-                    color: Colors.white,
+                    offset: Offset(-1, -1),
+                    color: theme.colorScheme.surface,
                     blurRadius: 4,
                     inset: true,
                   ),
                   BoxShadow(
-                    offset: Offset(2, 2),
-                    color: Colors.black38,
-                    blurRadius: 4,
+                    offset: Offset(1, 1),
+                    color: theme.colorScheme.surfaceVariant,
+                    blurRadius: 3,
                     inset: true,
                   ),
                 ],
@@ -61,7 +61,7 @@ class FieldFormulaWidget extends StatelessWidget {
           children: [
             InkWell(
               onTap: onCurrencyTap,
-              splashColor: ColorTheme.primary,
+              splashColor: theme.primaryColor,
               borderRadius: BorderRadius.circular(20),
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
@@ -79,9 +79,9 @@ class FieldFormulaWidget extends StatelessWidget {
                           const SizedBox(width: 8),
                           Text(
                             currency!.iso,
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontSize: 20,
-                              color: ColorTheme.dark,
+                              color: theme.colorScheme.tertiary,
                             ),
                             textAlign: TextAlign.right,
                           ),
@@ -100,7 +100,7 @@ class FieldFormulaWidget extends StatelessWidget {
                 reverse: value.length < 10,
                 child: Text(
                   value,
-                  style: TextStyle(fontSize: 40, color: ColorTheme.dark),
+                  style: TextStyle(fontSize: 40, color: theme.colorScheme.tertiary),
                   textAlign: TextAlign.right,
                 ),
               ),
