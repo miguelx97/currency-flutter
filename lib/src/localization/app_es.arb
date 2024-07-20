@@ -3,6 +3,6 @@
   "@appTitle": {
     "description": "The title of the application"
   },
-  "sufix": "_en",
-  "searchCurrency": "Search currency"
+  "sufix": "_es",
+  "searchCurrency": "Buscar moneda"
 }

@@ -1,7 +1,9 @@
 import 'package:currencii/src/models/currency.dart';
 import 'package:currencii/src/services/currencies.service.dart';
+import 'package:currencii/src/shared/utils.dart';
 import 'package:currencii/src/widgets/currency_item.widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CurrencyPickerSheet extends StatefulWidget {
   const CurrencyPickerSheet({super.key});
@@ -60,8 +62,8 @@ class _CurrencyPickerSheetState extends State<CurrencyPickerSheet> {
     setState(() {
       currencies = allCurrencies
           .where((currency) =>
-              currency.name.toLowerCase().contains(query.toLowerCase()) ||
-              currency.iso.toLowerCase().contains(query.toLowerCase()))
+              currency.name.containsIgnoreCase(query) ||
+              currency.iso.containsIgnoreCase(query))
           .toList();
     });
   }
@@ -83,7 +85,7 @@ class _CurrencyPickerSheetState extends State<CurrencyPickerSheet> {
             //searcher
             TextField(
               decoration: InputDecoration(
-                hintText: 'Search currency',
+                hintText: AppLocalizations.of(context)!.searchCurrency,
                 prefixIcon: const Icon(Icons.search),
                 suffixIcon: IconButton(
                   icon: const Icon(Icons.clear),

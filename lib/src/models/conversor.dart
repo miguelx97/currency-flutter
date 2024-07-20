@@ -4,7 +4,7 @@ import 'package:currencii/src/models/calculator2.dart';
 import 'package:currencii/src/models/currency.dart';
 import 'package:currencii/src/models/currency_conversion_request.dart';
 import 'package:currencii/src/services/currencies.service.dart';
-import 'package:currencii/src/services/lib/services/local_storage.service.dart';
+import 'package:currencii/src/services/local_storage.service.dart';
 import 'package:http/http.dart' as http;
 
 class Conversor extends LsParser<Conversor> {

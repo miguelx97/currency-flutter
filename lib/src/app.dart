@@ -1,4 +1,5 @@
 import 'package:currencii/src/screens/home.screen.dart';
+import 'package:currencii/src/services/localization_manager.service.dart';
 import 'package:currencii/src/shared/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -51,6 +52,7 @@ class MyApp extends StatelessWidget {
           ],
           supportedLocales: const [
             Locale('en', ''), // English, no country code
+            Locale('es', ''), // Spanish, no country code
           ],
 
           // Use AppLocalizations to configure the correct application title
@@ -74,6 +76,7 @@ class MyApp extends StatelessWidget {
             return MaterialPageRoute<void>(
               settings: routeSettings,
               builder: (BuildContext context) {
+                LocalizationManager.instance.setLocalization(context);
                 switch (routeSettings.name) {
                   case SettingsView.routeName:
                     return SettingsView(controller: settingsController);

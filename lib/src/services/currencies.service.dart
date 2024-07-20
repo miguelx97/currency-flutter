@@ -1,7 +1,8 @@
 import 'dart:convert';
 import 'package:currencii/src/models/conversor.dart';
 import 'package:currencii/src/models/currency.dart';
-import 'package:currencii/src/services/lib/services/local_storage.service.dart';
+import 'package:currencii/src/services/local_storage.service.dart';
+import 'package:currencii/src/services/localization_manager.service.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
 class CurrenciesService {
@@ -13,7 +14,9 @@ class CurrenciesService {
 
   getCurrencies() async {
     // read local json file and return currencies
-    String filePath = 'assets/data/currencies.json';
+    
+    String fileSuffix = LocalizationManager.instance.appLocalization.sufix;
+    String filePath = 'assets/data/currencies$fileSuffix.json';
     String jsonContent = await readFile(filePath);
     List<dynamic> jsonList = jsonDecode(jsonContent);
     return jsonList.map((map) => Currency().fromMap(map)).toList();

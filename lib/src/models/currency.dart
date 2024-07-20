@@ -1,4 +1,4 @@
-import 'package:currencii/src/services/lib/services/local_storage.service.dart';
+import 'package:currencii/src/services/local_storage.service.dart';
 
 class Currency extends LsParser<Currency> {
     String name;
