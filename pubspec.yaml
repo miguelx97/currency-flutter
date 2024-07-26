@@ -4,7 +4,7 @@ description: Currency Converter 4 Travelers
 # Prevent accidental publishing to pub.dev.
 publish_to: 'none'
 
-version: 1.3.0+4
+version: 1.4.0+5
 
 environment:
   sdk: '>=3.1.5 <4.0.0'
