@@ -1,3 +1,4 @@
+import 'package:currencii/src/services/analytics.service.dart';
 import 'package:currencii/src/services/local_storage.service.dart';
 import 'package:flutter/material.dart';
 
@@ -15,6 +16,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  await AnalyticsService.init();
   
   final settingsController = SettingsController(SettingsService());
   

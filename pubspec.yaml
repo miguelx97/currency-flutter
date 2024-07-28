@@ -4,12 +4,14 @@ description: Currency Converter 4 Travelers
 # Prevent accidental publishing to pub.dev.
 publish_to: 'none'
 
-version: 1.4.0+5
+version: 1.5.0+6
 
 environment:
   sdk: '>=3.1.5 <4.0.0'
 
 dependencies:
+  app_tracking_transparency: ^2.0.5
+  firebase_analytics: ^10.8.0
   firebase_core: ^2.24.2
   flutter:
     sdk: flutter
